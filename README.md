@@ -1,28 +1,46 @@
-# 🌸 L'ENDROMEDÉ
-### Sistema de Gestión Comercial y Control de Inventarios
+<div align="center">
 
-> Plataforma web desarrollada para la administración integral, control de existencias, ventas multicanal y seguimiento de pedidos para la línea de fragancias **L'ENDROMEDÉ**[span_0](start_span)[span_0](end_span).
+#  L'ENDROMEDÉ
+### *Sistema de Gestión Comercial y Control de Inventarios*
+
+[![Universidad](https://img.shields.io/badge/UNAB-Universidad_Dr._Andr%C3%A9s_Bello-7B1FA2?style=for-the-badge)](https://unab.edu.sv/)
+[![Asignatura](https://img.shields.io/badge/Asignatura-Programaci%C3%B3n_II-1976D2?style=for-the-badge)](#)
+[![Estado](https://img.shields.io/badge/Estado-En_Desarrollo-2E7D32?style=for-the-badge)](#)
+
+<br/>
+
+<p align="center">
+  Plataforma web integral para la automatización de ventas, administración de catálogo, seguimiento de pedidos y control de existencias en tiempo real para la línea de fragancias <b>L'ENDROMEDÉ</b>
+</p>
+
+</div>
 
 ---
 
-### ⚡ Aspectos Clave
+### Módulos Clave del Sistema
 
-* 🛍️ **Giro comercial:** Perfumería y lociones para hombres, mujeres y niños[span_1](start_span)[span_1](end_span).
-* 🛠️ **Módulos principales:** Catálogo CRUD, inventario en tiempo real, punto de venta y pedidos en línea[span_2](start_span)[span_2](end_span).
-* 📱 **Compatibilidad:** Interfaz web adaptativa para PC, tabletas y móviles[span_3](start_span)[span_3](end_span).
-
----
-
-### 🎓 Información Académica
-
-| Concepto | Detalle |
+| Módulo | Descripción |
 | :--- | :--- |
-| **Institución** | Universidad Dr. Andrés Bello (Regional Chalatenango)[span_4](start_span)[span_4](end_span) |
-| **Facultad** | Tecnología e Innovación[span_5](start_span)[span_5](end_span) |
-| **Asignatura** | Programación II (Grupo 1)[span_6](start_span)[span_6](end_span) |
-| **Docente** | Ing. Julio Cesar Monge Rauda[span_7](start_span)[span_7](end_span) |
-| **Fecha** | 25 de Agosto de 2026[span_8](start_span)[span_8](end_span) |
+|  **Control de Inventario** | Seguimiento de existencias, entradas, salidas y alertas de stock bajo |
+|  **Catálogo Interactivo** | Registro, edición y clasificación de lociones por aroma, categoría, tamaño y precio |
+|  **Ventas y Pedidos** | Gestión para ventas en caja física y procesamiento de pedidos en línea. |
+|  **Módulo de Reportes** | Generación de reportes de ventas, productos e inventario|
 
-**Equipo de Desarrollo:**  
-`Carlos Rubén Avelar` • `Steven Gerrard Valle` • `Boris Raynaldo Garcia` • `Luis Angel Escobar` • `Romel Jose Mancia` • `Alisom Naomi Casco`[span_9](start_span)[span_9](end_span)
+---
 
+###  Ficha Académica
+
+* **Institución:** Universidad Dr. Andrés Bello (Regional Chalatenango)
+* **Facultad:** Tecnología e Innovación
+* **Asignatura:** Programación II — Grupo 1
+* **Catedrático:** Ing. Julio Cesar Monge Rauda
+* **Fecha:** 25 de agosto de 2026
+
+####  Equipo de Desarrollo
+
+1. Carlos Rubén Avelar
+2. Steven Gerrard Valle
+3. Boris Raynaldo Garcia
+4. Luis Angel Escobar
+5. Romel Jose Mancia
+6. Alisom Naomi Casco
