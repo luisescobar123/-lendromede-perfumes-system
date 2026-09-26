@@ -34,7 +34,7 @@
 * **Facultad:** Tecnología e Innovación
 * **Asignatura:** Programación II — Grupo 1
 * **Catedrático:** Ing. Julio Cesar Monge Rauda
-* **Fecha:** 25 de agosto de 2026
+  
 
 ####  Equipo de Desarrollo
 
