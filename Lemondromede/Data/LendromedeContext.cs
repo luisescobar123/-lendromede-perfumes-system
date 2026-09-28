@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Lemondromede.Models;
+using Lemondromede.Config;
 
 
 
@@ -21,7 +22,7 @@ namespace Lemondromede.Data
         public DbSet<DetalleVenta> Dventas { get; set; }
         public DbSet<Reporte> Reportes { get; set; }
         public DbSet<Inventario> Inventarios { get; set; }
-        public DbSet<Categoria> Categorias { get; set; }
+      
 
         
 
@@ -33,7 +34,7 @@ namespace Lemondromede.Data
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
             //definir la cadena de conexion
-            /*
+            
             if (!options.IsConfigured)
             {
                 options.UseSqlServer(ConfiguracionApp.ObtenerCadenaConexion());
@@ -42,9 +43,66 @@ namespace Lemondromede.Data
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Usuario>()
-                
+            modelBuilder.Entity<Pedido>()
+                .HasOne(p => p.Cliente)
+                .WithMany(c => c.Pedidos)
+                .HasForeignKey(p => p.IdCliente)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<Pedido>()
+                .HasOne(p => p.Usuario)
+                .WithMany(u => u.Pedidos)
+                .HasForeignKey(p => p.IdUsuario)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<Producto>()
+                .Property(p => p.Estado)
+                .HasDefaultValue(true);
+
+            modelBuilder.Entity<Venta>()
+                .HasOne(v => v.Cliente)            
+                .WithMany(c => c.Ventas)          
+                .HasForeignKey(v => v.IdCliente)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<Venta>()
+                .HasOne(v => v.Usuario) 
+                .WithMany(u => u.Ventas)
+                .HasForeignKey(v => v.IdUsuario)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<DetalleVenta>()
+                .HasOne(dv => dv.Venta)
+                .WithMany(v => v.Dventas)
+                .HasForeignKey(dv => dv.IdVenta)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<DetalleVenta>()
+                .HasOne(dv => dv.Producto)
+                .WithMany()
+                .HasForeignKey(dv => dv.IdProducto)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<DetallePedido>()
+                .HasOne(dp => dp.Pedido)
+                .WithMany(p => p.Dpedidos)
+                .HasForeignKey(dp => dp.IdPedido)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<DetallePedido>()
+                .HasOne(dp => dp.Producto)
+                .WithMany()
+                .HasForeignKey(dp => dp.IdProducto)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<Inventario>()
+                .HasOne(i => i.Producto)
+                .WithMany()
+                .HasForeignKey(i => i.IdProducto)
+                .OnDelete(DeleteBehavior.Restrict);
+            
+
         }
-        */
+        
     }
 }
