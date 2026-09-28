@@ -14,6 +14,7 @@ namespace Lemondromede.Models
         {
             DireccionEntrega = string.Empty;
         }
+        [Key]
         public int IdPedido { get; set; }
         public DateTime FechaPedido { get; set; }
         [Required]

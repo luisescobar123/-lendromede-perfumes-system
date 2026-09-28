@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
@@ -11,6 +12,7 @@ namespace Lemondromede.Models
     {
         public Venta()
         { TipoVenta = string.Empty; }
+        [Key] 
         public int IdVenta { get; set; }
         public DateTime Fecha { get; set; }
         [Column(TypeName = "decimal(10,2)")]

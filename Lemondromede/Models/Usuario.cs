@@ -11,6 +11,7 @@ namespace Lemondromede.Models
     {
         public Usuario()
         { Nombre = string.Empty; Correo = string.Empty; Contrasena = string.Empty; Rol = string.Empty;  }
+        [Key]  
         public int IdUsuario { get; set; }
         [Required]
         [StringLength(100)]

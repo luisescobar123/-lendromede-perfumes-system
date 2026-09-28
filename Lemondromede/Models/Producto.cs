@@ -12,6 +12,8 @@ namespace Lemondromede.Models
     {
         public Producto()
         { Nombre = string.Empty; Aroma = string.Empty; Tamano = string.Empty; Categoria = string.Empty; }
+
+        [Key] 
         public int IdProducto { get; set; }
         [Required]
         [StringLength(100)]

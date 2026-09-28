@@ -9,6 +9,7 @@ namespace Lemondromede.Models
 {
     public class Inventario
     {
+        [Key]
         public int IdInventario { get; set; }
         public int CantidadDisponible { get; set; }
         [Required]

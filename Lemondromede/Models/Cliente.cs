@@ -13,6 +13,7 @@ namespace Lemondromede.Models
         public Cliente()
         { Nombre = string.Empty; Correo = string.Empty; Numero = string.Empty; Direccion = string.Empty; }
 
+        [Key]
         public int IdCliente { get; set; }
         [Required]
         [StringLength(100)]

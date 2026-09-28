@@ -10,6 +10,7 @@ namespace Lemondromede.Models
 {
     public class Categoria
     {
+        [Key]
         public int IdCategoria { get; set; }
         [Required]
         [StringLength(50)]
