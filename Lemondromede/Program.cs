@@ -1,3 +1,5 @@
+using forms_de_el_proyecto_wwwww.Forms;
+
 namespace Lemondromede
 {
     internal static class Program
@@ -11,7 +13,8 @@ namespace Lemondromede
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new Form1());
+            // Ejecutar el formulario de categorías al iniciar la aplicación
+            Application.Run(new FmrCategorias());
         }
     }
 }

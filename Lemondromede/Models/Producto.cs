@@ -11,7 +11,7 @@ namespace Lemondromede.Models
     public class Producto
     {
         public Producto()
-        { Nombre = string.Empty; Aroma = string.Empty; Tamano = string.Empty; Categoria = string.Empty; }
+        { Nombre = string.Empty; Aroma = string.Empty; Tamano = string.Empty;  }
 
         [Key] 
         public int IdProducto { get; set; }
@@ -24,10 +24,11 @@ namespace Lemondromede.Models
 
         [StringLength(60)]
         public string Tamano { get; set; }
-        public string Categoria { get; set; }
+
         [Column(TypeName = "decimal(10,2)")]
         public decimal Precio { get; set; }
         public bool Estado { get; set; }
+        public int Stock { get; set; }
 
         //llave foraneas
         public int IdCategoria { get; set; }

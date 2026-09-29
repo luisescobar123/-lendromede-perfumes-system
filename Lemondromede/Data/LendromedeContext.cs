@@ -16,6 +16,7 @@ namespace Lemondromede.Data
         public DbSet<Usuario> Usuarios { get; set; }
         public DbSet<Cliente> Clientes { get; set; }
         public DbSet<Producto> Productos { get; set; }
+        public DbSet<Categoria> Categorias { get; set; }
         public DbSet<Pedido> Pedidos { get; set; }
         public DbSet<Venta> Ventas { get; set; }
         public DbSet<DetallePedido>Dpedidos { get; set; }
@@ -59,6 +60,13 @@ namespace Lemondromede.Data
                 .Property(p => p.Estado)
                 .HasDefaultValue(true);
 
+            
+            modelBuilder.Entity<Producto>()
+                .HasOne(p => p.Categorias)
+                .WithMany(c => c.Productos)
+                .HasForeignKey(p => p.IdCategoria)
+                .OnDelete(DeleteBehavior.Restrict);
+
             modelBuilder.Entity<Venta>()
                 .HasOne(v => v.Cliente)            
                 .WithMany(c => c.Ventas)          
@@ -100,7 +108,25 @@ namespace Lemondromede.Data
                 .WithMany()
                 .HasForeignKey(i => i.IdProducto)
                 .OnDelete(DeleteBehavior.Restrict);
-            
+
+            modelBuilder.Entity<Producto>().HasData(
+    
+    );
+
+            modelBuilder.Entity<Categoria>().HasData(
+                new Categoria { IdCategoria = 1, NombreCategoria = "Florales", Descripcion = "Aromas florales" },
+                new Categoria { IdCategoria = 2, NombreCategoria = "Dulces", Descripcion = "Aromas dulces" },
+                new Categoria { IdCategoria = 3, NombreCategoria = "Cítricos", Descripcion = "Aromas cítricos" },
+                new Categoria { IdCategoria = 4, NombreCategoria = "Amaderados", Descripcion = "Aromas amaderados" }
+            );
+
+            modelBuilder.Entity<Producto>().HasData(
+                new Producto { IdProducto = 1, Nombre = "Une touche deau", Aroma = "toques de agua", Tamano = "15.2cm", Precio = 143.94m, Stock = 19, Estado = true, IdCategoria = 1 },
+                new Producto { IdProducto = 2, Nombre = "Cœur rouge", Aroma = "olor a venas dulces", Tamano = "13.7cm", Precio = 133.22m, Stock = 14, Estado = true, IdCategoria = 2 },
+                new Producto { IdProducto = 3, Nombre = "Dague jaune", Aroma = "aroma a dulce", Tamano = "18.1cm", Precio = 167.94m, Stock = 0, Estado = false, IdCategoria = 3 },
+                new Producto { IdProducto = 4, Nombre = "Couronne royale", Aroma = "aroma a realeza real", Tamano = "15.6cm", Precio = 2490.61m, Stock = 0, Estado = false, IdCategoria = 4 }
+            );
+
 
         }
         
