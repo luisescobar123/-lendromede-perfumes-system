@@ -14,7 +14,7 @@ namespace Lemondromede
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             // Ejecutar el formulario de categorías al iniciar la aplicación
-            Application.Run(new FmrCategorias());
+            Application.Run(new FmrVentas());
         }
     }
 }

@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\chuch\\Desktop\\Programacion2\\Lemondromede\\Lemondromede\\Lemondromede.csproj": {}
+    "C:\\Users\\xcarl\\OneDrive\\Documentos\\Léndromede\\Lemondromede\\Lemondromede.csproj": {}
   },
   "projects": {
-    "C:\\Users\\chuch\\Desktop\\Programacion2\\Lemondromede\\Lemondromede\\Lemondromede.csproj": {
+    "C:\\Users\\xcarl\\OneDrive\\Documentos\\Léndromede\\Lemondromede\\Lemondromede.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\chuch\\Desktop\\Programacion2\\Lemondromede\\Lemondromede\\Lemondromede.csproj",
+        "projectUniqueName": "C:\\Users\\xcarl\\OneDrive\\Documentos\\Léndromede\\Lemondromede\\Lemondromede.csproj",
         "projectName": "Lemondromede",
-        "projectPath": "C:\\Users\\chuch\\Desktop\\Programacion2\\Lemondromede\\Lemondromede\\Lemondromede.csproj",
-        "packagesPath": "C:\\Users\\chuch\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\chuch\\Desktop\\Programacion2\\Lemondromede\\Lemondromede\\obj\\",
+        "projectPath": "C:\\Users\\xcarl\\OneDrive\\Documentos\\Léndromede\\Lemondromede\\Lemondromede.csproj",
+        "packagesPath": "C:\\Users\\xcarl\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\xcarl\\OneDrive\\Documentos\\Léndromede\\Lemondromede\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\chuch\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\xcarl\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -67,6 +67,14 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[8.0.8, )"
+            },
+            "Microsoft.Extensions.Configuration": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Microsoft.Extensions.Configuration.Json": {
+              "target": "Package",
+              "version": "[8.0.0, )"
             }
           },
           "imports": [
@@ -88,7 +96,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.400/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.401/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
