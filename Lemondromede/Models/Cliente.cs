@@ -28,7 +28,6 @@ namespace Lemondromede.Models
         [StringLength(200)]
         public string Direccion { get; set; }
         //de uno a muchos
-        public List<Pedido> Pedidos { get; set; } = new();
         public List<Venta> Ventas { get; set; } = new();
     }
 }

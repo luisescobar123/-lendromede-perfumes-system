@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "5rg7aAIZ7+g=",
+  "dgSpecHash": "HtOn+rNYaA4=",
   "success": true,
-  "projectFilePath": "C:\\Users\\xcarl\\OneDrive\\Documentos\\Léndromede\\Lemondromede\\Lemondromede.csproj",
+  "projectFilePath": "C:\\Users\\xcarl\\OneDrive\\Documentos\\Léndromede\\semana 14\\Lemondromede\\Lemondromede.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\xcarl\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\xcarl\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

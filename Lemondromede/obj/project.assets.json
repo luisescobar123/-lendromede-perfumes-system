@@ -4549,11 +4549,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\xcarl\\OneDrive\\Documentos\\Léndromede\\Lemondromede\\Lemondromede.csproj",
+      "projectUniqueName": "C:\\Users\\xcarl\\OneDrive\\Documentos\\Léndromede\\semana 14\\Lemondromede\\Lemondromede.csproj",
       "projectName": "Lemondromede",
-      "projectPath": "C:\\Users\\xcarl\\OneDrive\\Documentos\\Léndromede\\Lemondromede\\Lemondromede.csproj",
+      "projectPath": "C:\\Users\\xcarl\\OneDrive\\Documentos\\Léndromede\\semana 14\\Lemondromede\\Lemondromede.csproj",
       "packagesPath": "C:\\Users\\xcarl\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\xcarl\\OneDrive\\Documentos\\Léndromede\\Lemondromede\\obj\\",
+      "outputPath": "C:\\Users\\xcarl\\OneDrive\\Documentos\\Léndromede\\semana 14\\Lemondromede\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

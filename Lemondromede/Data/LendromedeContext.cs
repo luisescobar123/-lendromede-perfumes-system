@@ -17,9 +17,7 @@ namespace Lemondromede.Data
         public DbSet<Cliente> Clientes { get; set; }
         public DbSet<Producto> Productos { get; set; }
         public DbSet<Categoria> Categorias { get; set; }
-        public DbSet<Pedido> Pedidos { get; set; }
         public DbSet<Venta> Ventas { get; set; }
-        public DbSet<DetallePedido>Dpedidos { get; set; }
         public DbSet<DetalleVenta> Dventas { get; set; }
         public DbSet<Reporte> Reportes { get; set; }
         public DbSet<Inventario> Inventarios { get; set; }
@@ -44,18 +42,6 @@ namespace Lemondromede.Data
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Pedido>()
-                .HasOne(p => p.Cliente)
-                .WithMany(c => c.Pedidos)
-                .HasForeignKey(p => p.IdCliente)
-                .OnDelete(DeleteBehavior.Restrict);
-
-            modelBuilder.Entity<Pedido>()
-                .HasOne(p => p.Usuario)
-                .WithMany(u => u.Pedidos)
-                .HasForeignKey(p => p.IdUsuario)
-                .OnDelete(DeleteBehavior.Restrict);
-
             modelBuilder.Entity<Producto>()
                 .Property(p => p.Estado)
                 .HasDefaultValue(true);
@@ -89,18 +75,6 @@ namespace Lemondromede.Data
                 .HasOne(dv => dv.Producto)
                 .WithMany()
                 .HasForeignKey(dv => dv.IdProducto)
-                .OnDelete(DeleteBehavior.Restrict);
-
-            modelBuilder.Entity<DetallePedido>()
-                .HasOne(dp => dp.Pedido)
-                .WithMany(p => p.Dpedidos)
-                .HasForeignKey(dp => dp.IdPedido)
-                .OnDelete(DeleteBehavior.Restrict);
-
-            modelBuilder.Entity<DetallePedido>()
-                .HasOne(dp => dp.Producto)
-                .WithMany()
-                .HasForeignKey(dp => dp.IdProducto)
                 .OnDelete(DeleteBehavior.Restrict);
 
             modelBuilder.Entity<Inventario>()

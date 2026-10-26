@@ -26,7 +26,6 @@ namespace Lemondromede.Models
         public bool Estado { get; set; }
 
         // De uno a muchos
-        public List<Pedido> Pedidos { get; set; } = new();
         public List<Venta> Ventas { get; set; } = new();
         public List<Producto> Productos { get; set; } = new();
     }

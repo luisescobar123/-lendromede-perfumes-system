@@ -69,120 +69,151 @@ namespace forms_de_el_proyecto_wwwww.Forms
             cmbTipoVenta = new ComboBox();
             lblFecha = new Label();
             lblFechaValor = new Label();
-
             lblProducto = new Label();
             cmbProducto = new ComboBox();
             lblCantidad = new Label();
             numCantidad = new NumericUpDown();
             btAgregarLinea = new Button();
             dgvDetalle = new DataGridView();
-
             lblTotalTexto = new Label();
             lblTotal = new Label();
             btGuardarVenta = new Button();
             btNuevaVenta = new Button();
-
             dgvVentas = new DataGridView();
-
-            ((System.ComponentModel.ISupportInitialize)numCantidad).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dgvDetalle).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dgvVentas).BeginInit();
+            ((ISupportInitialize)numCantidad).BeginInit();
+            ((ISupportInitialize)dgvDetalle).BeginInit();
+            ((ISupportInitialize)dgvVentas).BeginInit();
             SuspendLayout();
-
+            // 
             // lblTitulo
+            // 
             lblTitulo.AutoSize = true;
             lblTitulo.Location = new Point(240, 20);
             lblTitulo.Name = "lblTitulo";
-            lblTitulo.Size = new Size(140, 20);
+            lblTitulo.Size = new Size(153, 25);
+            lblTitulo.TabIndex = 0;
             lblTitulo.Text = "Gestion de ventas";
-
+            // 
             // lblCliente
+            // 
             lblCliente.AutoSize = true;
             lblCliente.Location = new Point(20, 60);
             lblCliente.Name = "lblCliente";
+            lblCliente.Size = new Size(69, 25);
+            lblCliente.TabIndex = 1;
             lblCliente.Text = "Cliente:";
-
+            // 
             // cmbCliente
+            // 
+            cmbCliente.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbCliente.Location = new Point(110, 57);
             cmbCliente.Name = "cmbCliente";
-            cmbCliente.Size = new Size(200, 28);
-            cmbCliente.DropDownStyle = ComboBoxStyle.DropDownList;
-
+            cmbCliente.Size = new Size(200, 33);
+            cmbCliente.TabIndex = 2;
+            // 
             // lblUsuario
+            // 
             lblUsuario.AutoSize = true;
             lblUsuario.Location = new Point(330, 60);
             lblUsuario.Name = "lblUsuario";
+            lblUsuario.Size = new Size(66, 25);
+            lblUsuario.TabIndex = 3;
             lblUsuario.Text = "Cajero:";
-
+            // 
             // cmbUsuario
+            // 
+            cmbUsuario.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbUsuario.Location = new Point(400, 57);
             cmbUsuario.Name = "cmbUsuario";
-            cmbUsuario.Size = new Size(180, 28);
-            cmbUsuario.DropDownStyle = ComboBoxStyle.DropDownList;
-
+            cmbUsuario.Size = new Size(180, 33);
+            cmbUsuario.TabIndex = 4;
+            // 
             // lblTipoVenta
+            // 
             lblTipoVenta.AutoSize = true;
             lblTipoVenta.Location = new Point(20, 100);
             lblTipoVenta.Name = "lblTipoVenta";
+            lblTipoVenta.Size = new Size(124, 25);
+            lblTipoVenta.TabIndex = 5;
             lblTipoVenta.Text = "Tipo de venta:";
-
+            // 
             // cmbTipoVenta
-            cmbTipoVenta.Location = new Point(130, 97);
-            cmbTipoVenta.Name = "cmbTipoVenta";
-            cmbTipoVenta.Size = new Size(150, 28);
+            // 
             cmbTipoVenta.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbTipoVenta.Items.AddRange(new object[] { "Contado", "Credito" });
-            cmbTipoVenta.SelectedIndex = 0;
-
+            cmbTipoVenta.Location = new Point(139, 97);
+            cmbTipoVenta.Name = "cmbTipoVenta";
+            cmbTipoVenta.Size = new Size(150, 33);
+            cmbTipoVenta.TabIndex = 6;
+            // 
             // lblFecha
+            // 
             lblFecha.AutoSize = true;
             lblFecha.Location = new Point(330, 100);
             lblFecha.Name = "lblFecha";
+            lblFecha.Size = new Size(61, 25);
+            lblFecha.TabIndex = 7;
             lblFecha.Text = "Fecha:";
-
+            // 
             // lblFechaValor
+            // 
             lblFechaValor.AutoSize = true;
             lblFechaValor.Location = new Point(400, 100);
             lblFechaValor.Name = "lblFechaValor";
-            lblFechaValor.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm");
-
+            lblFechaValor.Size = new Size(155, 25);
+            lblFechaValor.TabIndex = 8;
+            lblFechaValor.Text = "25/10/2026 19:07";
+            // 
             // lblProducto
+            // 
             lblProducto.AutoSize = true;
             lblProducto.Location = new Point(20, 150);
             lblProducto.Name = "lblProducto";
+            lblProducto.Size = new Size(89, 25);
+            lblProducto.TabIndex = 9;
             lblProducto.Text = "Producto:";
-
+            // 
             // cmbProducto
+            // 
+            cmbProducto.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbProducto.Location = new Point(110, 147);
             cmbProducto.Name = "cmbProducto";
-            cmbProducto.Size = new Size(260, 28);
-            cmbProducto.DropDownStyle = ComboBoxStyle.DropDownList;
-
+            cmbProducto.Size = new Size(260, 33);
+            cmbProducto.TabIndex = 10;
+            // 
             // lblCantidad
+            // 
             lblCantidad.AutoSize = true;
             lblCantidad.Location = new Point(390, 150);
             lblCantidad.Name = "lblCantidad";
+            lblCantidad.Size = new Size(87, 25);
+            lblCantidad.TabIndex = 11;
             lblCantidad.Text = "Cantidad:";
-
+            // 
             // numCantidad
-            numCantidad.Location = new Point(470, 147);
+            // 
+            numCantidad.Location = new Point(471, 147);
+            numCantidad.Maximum = new decimal(new int[] { 1000, 0, 0, 0 });
+            numCantidad.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             numCantidad.Name = "numCantidad";
-            numCantidad.Size = new Size(70, 27);
-            numCantidad.Minimum = 1;
-            numCantidad.Maximum = 1000;
-            numCantidad.Value = 1;
-
+            numCantidad.Size = new Size(70, 31);
+            numCantidad.TabIndex = 12;
+            numCantidad.Value = new decimal(new int[] { 1, 0, 0, 0 });
+            // 
             // btAgregarLinea
+            // 
             btAgregarLinea.Location = new Point(560, 146);
             btAgregarLinea.Name = "btAgregarLinea";
             btAgregarLinea.Size = new Size(120, 29);
+            btAgregarLinea.TabIndex = 13;
             btAgregarLinea.Text = "Agregar linea";
             btAgregarLinea.UseVisualStyleBackColor = true;
-
+            // 
             // dgvDetalle
+            // 
             dgvDetalle.AllowUserToAddRows = false;
-            dgvDetalle.AutoGenerateColumns = false;
             dgvDetalle.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvDetalle.ColumnHeadersHeight = 34;
             dgvDetalle.Location = new Point(20, 190);
             dgvDetalle.MultiSelect = false;
             dgvDetalle.Name = "dgvDetalle";
@@ -190,68 +221,51 @@ namespace forms_de_el_proyecto_wwwww.Forms
             dgvDetalle.RowHeadersWidth = 51;
             dgvDetalle.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvDetalle.Size = new Size(660, 150);
-
-            // Columnas manuales del detalle, para no mostrar
-            // propiedades de navegación crudas en la grilla.
-            // "Producto" no se liga con DataPropertyName porque DetalleVenta
-            // no tiene una propiedad plana con el nombre: Producto es un objeto
-            // completo. El texto se resuelve en el evento CellFormatting de abajo.
-            dgvDetalle.Columns.Add(new DataGridViewTextBoxColumn
-            {
-                Name = "colProducto",
-                HeaderText = "Producto"
-            });
-            dgvDetalle.Columns.Add(new DataGridViewTextBoxColumn
-            {
-                Name = "colCantidad",
-                HeaderText = "Cantidad",
-                DataPropertyName = "Cantidad"
-            });
-            dgvDetalle.Columns.Add(new DataGridViewTextBoxColumn
-            {
-                Name = "colPrecio",
-                HeaderText = "Precio Unitario",
-                DataPropertyName = "PrecioUnitario"
-            });
-            dgvDetalle.Columns.Add(new DataGridViewTextBoxColumn
-            {
-                Name = "colSubtotal",
-                HeaderText = "Subtotal",
-                DataPropertyName = "Subtotal"
-            });
-
+            dgvDetalle.TabIndex = 14;
+            // 
             // lblTotalTexto
+            // 
             lblTotalTexto.AutoSize = true;
+            lblTotalTexto.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             lblTotalTexto.Location = new Point(500, 350);
             lblTotalTexto.Name = "lblTotalTexto";
+            lblTotalTexto.Size = new Size(64, 28);
+            lblTotalTexto.TabIndex = 15;
             lblTotalTexto.Text = "Total:";
-            lblTotalTexto.Font = new Font("Segoe UI", 10f, FontStyle.Bold);
-
+            // 
             // lblTotal
+            // 
             lblTotal.AutoSize = true;
+            lblTotal.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             lblTotal.Location = new Point(560, 350);
             lblTotal.Name = "lblTotal";
+            lblTotal.Size = new Size(65, 28);
+            lblTotal.TabIndex = 16;
             lblTotal.Text = "$0.00";
-            lblTotal.Font = new Font("Segoe UI", 10f, FontStyle.Bold);
-
+            // 
             // btGuardarVenta
+            // 
             btGuardarVenta.Location = new Point(20, 390);
             btGuardarVenta.Name = "btGuardarVenta";
             btGuardarVenta.Size = new Size(140, 32);
+            btGuardarVenta.TabIndex = 17;
             btGuardarVenta.Text = "Guardar venta";
             btGuardarVenta.UseVisualStyleBackColor = true;
-
+            // 
             // btNuevaVenta
+            // 
             btNuevaVenta.Location = new Point(170, 390);
             btNuevaVenta.Name = "btNuevaVenta";
             btNuevaVenta.Size = new Size(140, 32);
+            btNuevaVenta.TabIndex = 18;
             btNuevaVenta.Text = "Nueva venta";
             btNuevaVenta.UseVisualStyleBackColor = true;
-
-            // dgvVentas (listado de ventas ya registradas, solo lectura)
+            // 
+            // dgvVentas
+            // 
             dgvVentas.AllowUserToAddRows = false;
-            dgvVentas.AutoGenerateColumns = false;
             dgvVentas.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvVentas.ColumnHeadersHeight = 34;
             dgvVentas.Location = new Point(20, 440);
             dgvVentas.MultiSelect = false;
             dgvVentas.Name = "dgvVentas";
@@ -259,51 +273,10 @@ namespace forms_de_el_proyecto_wwwww.Forms
             dgvVentas.RowHeadersWidth = 51;
             dgvVentas.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvVentas.Size = new Size(660, 160);
-
-            dgvVentas.Columns.Add(new DataGridViewTextBoxColumn
-            {
-                Name = "colIdVenta",
-                HeaderText = "ID",
-                DataPropertyName = "IdVenta"
-            });
-            dgvVentas.Columns.Add(new DataGridViewTextBoxColumn
-            {
-                Name = "colFecha",
-                HeaderText = "Fecha",
-                DataPropertyName = "Fecha"
-            });
-            // Cliente y Usuario se resuelven en CellFormatting (son objetos,
-            // no texto plano), igual que la columna Producto de arriba.
-            dgvVentas.Columns.Add(new DataGridViewTextBoxColumn
-            {
-                Name = "colClienteVenta",
-                HeaderText = "Cliente"
-            });
-            dgvVentas.Columns.Add(new DataGridViewTextBoxColumn
-            {
-                Name = "colUsuarioVenta",
-                HeaderText = "Cajero"
-            });
-            dgvVentas.Columns.Add(new DataGridViewTextBoxColumn
-            {
-                Name = "colTipoVenta",
-                HeaderText = "Tipo",
-                DataPropertyName = "TipoVenta"
-            });
-            dgvVentas.Columns.Add(new DataGridViewTextBoxColumn
-            {
-                Name = "colTotalVenta",
-                HeaderText = "Total",
-                DataPropertyName = "Total"
-            });
-            dgvVentas.Columns.Add(new DataGridViewCheckBoxColumn
-            {
-                Name = "colEstadoVenta",
-                HeaderText = "Activa",
-                DataPropertyName = "Estado"
-            });
-
+            dgvVentas.TabIndex = 19;
+            // 
             // FmrVentas
+            // 
             ClientSize = new Size(700, 620);
             Controls.Add(lblTitulo);
             Controls.Add(lblCliente);
@@ -327,10 +300,9 @@ namespace forms_de_el_proyecto_wwwww.Forms
             Controls.Add(dgvVentas);
             Name = "FmrVentas";
             Text = "Gestion de ventas";
-
-            ((System.ComponentModel.ISupportInitialize)numCantidad).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dgvDetalle).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dgvVentas).EndInit();
+            ((ISupportInitialize)numCantidad).EndInit();
+            ((ISupportInitialize)dgvDetalle).EndInit();
+            ((ISupportInitialize)dgvVentas).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }

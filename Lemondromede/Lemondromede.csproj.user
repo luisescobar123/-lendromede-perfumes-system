@@ -4,6 +4,9 @@
     <Compile Update="Fomrs\FmrCategorias.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Fomrs\FmrUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Fomrs\FmrVentas.cs">
       <SubType>Form</SubType>
     </Compile>

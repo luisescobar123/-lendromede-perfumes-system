@@ -102,38 +102,6 @@ namespace Lemondromede.Migrations
                     b.ToTable("Clientes");
                 });
 
-            modelBuilder.Entity("Lemondromede.Models.DetallePedido", b =>
-                {
-                    b.Property<int>("IdDetalleP")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdDetalleP"));
-
-                    b.Property<int>("Cantidad")
-                        .HasColumnType("int");
-
-                    b.Property<int>("IdPedido")
-                        .HasColumnType("int");
-
-                    b.Property<int>("IdProducto")
-                        .HasColumnType("int");
-
-                    b.Property<decimal>("PrecioUnitario")
-                        .HasColumnType("decimal(10,2)");
-
-                    b.Property<decimal>("Subtotal")
-                        .HasColumnType("decimal(10,2)");
-
-                    b.HasKey("IdDetalleP");
-
-                    b.HasIndex("IdPedido");
-
-                    b.HasIndex("IdProducto");
-
-                    b.ToTable("Dpedidos");
-                });
-
             modelBuilder.Entity("Lemondromede.Models.DetalleVenta", b =>
                 {
                     b.Property<int>("IdDetalleV")
@@ -191,43 +159,6 @@ namespace Lemondromede.Migrations
                     b.HasIndex("IdProducto");
 
                     b.ToTable("Inventarios");
-                });
-
-            modelBuilder.Entity("Lemondromede.Models.Pedido", b =>
-                {
-                    b.Property<int>("IdPedido")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdPedido"));
-
-                    b.Property<string>("DireccionEntrega")
-                        .IsRequired()
-                        .HasMaxLength(200)
-                        .HasColumnType("nvarchar(200)");
-
-                    b.Property<bool>("Estado")
-                        .HasColumnType("bit");
-
-                    b.Property<DateTime>("FechaPedido")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("IdCliente")
-                        .HasColumnType("int");
-
-                    b.Property<int>("IdUsuario")
-                        .HasColumnType("int");
-
-                    b.Property<decimal>("Total")
-                        .HasColumnType("decimal(10,2)");
-
-                    b.HasKey("IdPedido");
-
-                    b.HasIndex("IdCliente");
-
-                    b.HasIndex("IdUsuario");
-
-                    b.ToTable("Pedidos");
                 });
 
             modelBuilder.Entity("Lemondromede.Models.Producto", b =>
@@ -424,25 +355,6 @@ namespace Lemondromede.Migrations
                     b.ToTable("Ventas");
                 });
 
-            modelBuilder.Entity("Lemondromede.Models.DetallePedido", b =>
-                {
-                    b.HasOne("Lemondromede.Models.Pedido", "Pedido")
-                        .WithMany("Dpedidos")
-                        .HasForeignKey("IdPedido")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.HasOne("Lemondromede.Models.Producto", "Producto")
-                        .WithMany()
-                        .HasForeignKey("IdProducto")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.Navigation("Pedido");
-
-                    b.Navigation("Producto");
-                });
-
             modelBuilder.Entity("Lemondromede.Models.DetalleVenta", b =>
                 {
                     b.HasOne("Lemondromede.Models.Producto", "Producto")
@@ -471,25 +383,6 @@ namespace Lemondromede.Migrations
                         .IsRequired();
 
                     b.Navigation("Producto");
-                });
-
-            modelBuilder.Entity("Lemondromede.Models.Pedido", b =>
-                {
-                    b.HasOne("Lemondromede.Models.Cliente", "Cliente")
-                        .WithMany("Pedidos")
-                        .HasForeignKey("IdCliente")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.HasOne("Lemondromede.Models.Usuario", "Usuario")
-                        .WithMany("Pedidos")
-                        .HasForeignKey("IdUsuario")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.Navigation("Cliente");
-
-                    b.Navigation("Usuario");
                 });
 
             modelBuilder.Entity("Lemondromede.Models.Producto", b =>
@@ -544,20 +437,11 @@ namespace Lemondromede.Migrations
 
             modelBuilder.Entity("Lemondromede.Models.Cliente", b =>
                 {
-                    b.Navigation("Pedidos");
-
                     b.Navigation("Ventas");
-                });
-
-            modelBuilder.Entity("Lemondromede.Models.Pedido", b =>
-                {
-                    b.Navigation("Dpedidos");
                 });
 
             modelBuilder.Entity("Lemondromede.Models.Usuario", b =>
                 {
-                    b.Navigation("Pedidos");
-
                     b.Navigation("Productos");
 
                     b.Navigation("Ventas");
