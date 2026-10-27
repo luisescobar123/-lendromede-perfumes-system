@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Lemondromede")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2eb05a25dfbaeb16ecc6c3d5a588e53c54047e82")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4ac1e0983ab2381dad70f9e629a01c411e66f56f")]
 [assembly: System.Reflection.AssemblyProductAttribute("Lemondromede")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Lemondromede")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

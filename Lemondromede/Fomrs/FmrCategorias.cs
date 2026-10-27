@@ -191,7 +191,8 @@ namespace forms_de_el_proyecto_wwwww.Forms
 
         private void FmrCategorias_Load(object sender, EventArgs e)
         {
-            CargarCategorias();
+            // El formulario se abre sin consultar la base de datos automáticamente.
+            // Si quieres cargar categorías, hazlo desde un botón explícito.
         }
 
         private void txtId_TextChanged(object sender, EventArgs e)
