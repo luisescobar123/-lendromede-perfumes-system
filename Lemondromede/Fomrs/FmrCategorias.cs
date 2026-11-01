@@ -44,6 +44,7 @@ namespace forms_de_el_proyecto_wwwww.Forms
 
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FmrCategorias));
             lblTitulo = new Label();
             lblId = new Label();
             txtId = new TextBox();
@@ -131,6 +132,7 @@ namespace forms_de_el_proyecto_wwwww.Forms
             btActualizar.Text = "Actualizar";
             btActualizar.UseVisualStyleBackColor = true;
             btActualizar.Click += btActualizar_Click;
+            // 
             // btEliminar
             // 
             btEliminar.Location = new Point(389, 246);
@@ -178,6 +180,7 @@ namespace forms_de_el_proyecto_wwwww.Forms
             Controls.Add(txtId);
             Controls.Add(lblId);
             Controls.Add(lblTitulo);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FmrCategorias";
             Text = "Gestion de categorias";
             Load += FmrCategorias_Load;

@@ -372,7 +372,9 @@ namespace forms_de_el_proyecto_wwwww.Forms
             {
                 Nombre = _txtNombre.Text.Trim(),
                 Correo = _txtCorreo.Text.Trim(),
-                Contrasena = _txtContrasena.Text,
+                Contrasena = string.IsNullOrWhiteSpace(_txtContrasena.Text)
+    ? ""
+    : AuthService.HashContrasena(_txtContrasena.Text),
                 Rol = _txtRol.Text.Trim(),
                 Estado = _chkEstado.Checked,
             };
@@ -388,6 +390,11 @@ namespace forms_de_el_proyecto_wwwww.Forms
             _chkEstado.Checked = true;
             _dgvUsuarios.ClearSelection();
             _txtNombre.Focus();
+        }
+
+        private void InitializeComponent()
+        {
+
         }
 
         private static void MostrarErrorBaseDatos(Exception ex)

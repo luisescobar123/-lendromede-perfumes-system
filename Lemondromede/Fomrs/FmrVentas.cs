@@ -60,6 +60,7 @@ namespace forms_de_el_proyecto_wwwww.Forms
 
         private void InitializeComponent()
         {
+            ComponentResourceManager resources = new ComponentResourceManager(typeof(FmrVentas));
             lblTitulo = new Label();
             lblCliente = new Label();
             cmbCliente = new ComboBox();
@@ -90,7 +91,7 @@ namespace forms_de_el_proyecto_wwwww.Forms
             lblTitulo.AutoSize = true;
             lblTitulo.Location = new Point(240, 20);
             lblTitulo.Name = "lblTitulo";
-            lblTitulo.Size = new Size(153, 25);
+            lblTitulo.Size = new Size(126, 20);
             lblTitulo.TabIndex = 0;
             lblTitulo.Text = "Gestion de ventas";
             // 
@@ -99,7 +100,7 @@ namespace forms_de_el_proyecto_wwwww.Forms
             lblCliente.AutoSize = true;
             lblCliente.Location = new Point(20, 60);
             lblCliente.Name = "lblCliente";
-            lblCliente.Size = new Size(69, 25);
+            lblCliente.Size = new Size(58, 20);
             lblCliente.TabIndex = 1;
             lblCliente.Text = "Cliente:";
             // 
@@ -108,7 +109,7 @@ namespace forms_de_el_proyecto_wwwww.Forms
             cmbCliente.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbCliente.Location = new Point(110, 57);
             cmbCliente.Name = "cmbCliente";
-            cmbCliente.Size = new Size(200, 33);
+            cmbCliente.Size = new Size(200, 28);
             cmbCliente.TabIndex = 2;
             // 
             // lblUsuario
@@ -116,7 +117,7 @@ namespace forms_de_el_proyecto_wwwww.Forms
             lblUsuario.AutoSize = true;
             lblUsuario.Location = new Point(330, 60);
             lblUsuario.Name = "lblUsuario";
-            lblUsuario.Size = new Size(66, 25);
+            lblUsuario.Size = new Size(55, 20);
             lblUsuario.TabIndex = 3;
             lblUsuario.Text = "Cajero:";
             // 
@@ -125,7 +126,7 @@ namespace forms_de_el_proyecto_wwwww.Forms
             cmbUsuario.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbUsuario.Location = new Point(400, 57);
             cmbUsuario.Name = "cmbUsuario";
-            cmbUsuario.Size = new Size(180, 33);
+            cmbUsuario.Size = new Size(180, 28);
             cmbUsuario.TabIndex = 4;
             // 
             // lblTipoVenta
@@ -133,7 +134,7 @@ namespace forms_de_el_proyecto_wwwww.Forms
             lblTipoVenta.AutoSize = true;
             lblTipoVenta.Location = new Point(20, 100);
             lblTipoVenta.Name = "lblTipoVenta";
-            lblTipoVenta.Size = new Size(124, 25);
+            lblTipoVenta.Size = new Size(103, 20);
             lblTipoVenta.TabIndex = 5;
             lblTipoVenta.Text = "Tipo de venta:";
             // 
@@ -143,7 +144,7 @@ namespace forms_de_el_proyecto_wwwww.Forms
             cmbTipoVenta.Items.AddRange(new object[] { "Contado", "Credito" });
             cmbTipoVenta.Location = new Point(139, 97);
             cmbTipoVenta.Name = "cmbTipoVenta";
-            cmbTipoVenta.Size = new Size(150, 33);
+            cmbTipoVenta.Size = new Size(150, 28);
             cmbTipoVenta.TabIndex = 6;
             // 
             // lblFecha
@@ -151,7 +152,7 @@ namespace forms_de_el_proyecto_wwwww.Forms
             lblFecha.AutoSize = true;
             lblFecha.Location = new Point(330, 100);
             lblFecha.Name = "lblFecha";
-            lblFecha.Size = new Size(61, 25);
+            lblFecha.Size = new Size(50, 20);
             lblFecha.TabIndex = 7;
             lblFecha.Text = "Fecha:";
             // 
@@ -160,7 +161,7 @@ namespace forms_de_el_proyecto_wwwww.Forms
             lblFechaValor.AutoSize = true;
             lblFechaValor.Location = new Point(400, 100);
             lblFechaValor.Name = "lblFechaValor";
-            lblFechaValor.Size = new Size(155, 25);
+            lblFechaValor.Size = new Size(124, 20);
             lblFechaValor.TabIndex = 8;
             lblFechaValor.Text = "25/10/2026 19:07";
             // 
@@ -169,7 +170,7 @@ namespace forms_de_el_proyecto_wwwww.Forms
             lblProducto.AutoSize = true;
             lblProducto.Location = new Point(20, 150);
             lblProducto.Name = "lblProducto";
-            lblProducto.Size = new Size(89, 25);
+            lblProducto.Size = new Size(72, 20);
             lblProducto.TabIndex = 9;
             lblProducto.Text = "Producto:";
             // 
@@ -178,7 +179,7 @@ namespace forms_de_el_proyecto_wwwww.Forms
             cmbProducto.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbProducto.Location = new Point(110, 147);
             cmbProducto.Name = "cmbProducto";
-            cmbProducto.Size = new Size(260, 33);
+            cmbProducto.Size = new Size(260, 28);
             cmbProducto.TabIndex = 10;
             // 
             // lblCantidad
@@ -186,7 +187,7 @@ namespace forms_de_el_proyecto_wwwww.Forms
             lblCantidad.AutoSize = true;
             lblCantidad.Location = new Point(390, 150);
             lblCantidad.Name = "lblCantidad";
-            lblCantidad.Size = new Size(87, 25);
+            lblCantidad.Size = new Size(72, 20);
             lblCantidad.TabIndex = 11;
             lblCantidad.Text = "Cantidad:";
             // 
@@ -196,7 +197,7 @@ namespace forms_de_el_proyecto_wwwww.Forms
             numCantidad.Maximum = new decimal(new int[] { 1000, 0, 0, 0 });
             numCantidad.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             numCantidad.Name = "numCantidad";
-            numCantidad.Size = new Size(70, 31);
+            numCantidad.Size = new Size(70, 27);
             numCantidad.TabIndex = 12;
             numCantidad.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
@@ -229,7 +230,7 @@ namespace forms_de_el_proyecto_wwwww.Forms
             lblTotalTexto.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             lblTotalTexto.Location = new Point(500, 350);
             lblTotalTexto.Name = "lblTotalTexto";
-            lblTotalTexto.Size = new Size(64, 28);
+            lblTotalTexto.Size = new Size(54, 23);
             lblTotalTexto.TabIndex = 15;
             lblTotalTexto.Text = "Total:";
             // 
@@ -239,7 +240,7 @@ namespace forms_de_el_proyecto_wwwww.Forms
             lblTotal.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             lblTotal.Location = new Point(560, 350);
             lblTotal.Name = "lblTotal";
-            lblTotal.Size = new Size(65, 28);
+            lblTotal.Size = new Size(55, 23);
             lblTotal.TabIndex = 16;
             lblTotal.Text = "$0.00";
             // 
@@ -298,6 +299,7 @@ namespace forms_de_el_proyecto_wwwww.Forms
             Controls.Add(btGuardarVenta);
             Controls.Add(btNuevaVenta);
             Controls.Add(dgvVentas);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FmrVentas";
             Text = "Gestion de ventas";
             ((ISupportInitialize)numCantidad).EndInit();

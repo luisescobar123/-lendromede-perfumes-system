@@ -28,5 +28,11 @@
     </None>
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="Resources\login.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
 
