@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmProductos));
             panel1 = new Panel();
             label2 = new Label();
             label1 = new Label();
@@ -62,118 +63,133 @@
             // 
             panel1.Controls.Add(label2);
             panel1.Controls.Add(label1);
-            panel1.Location = new Point(282, 0);
+            panel1.Location = new Point(238, 11);
+            panel1.Margin = new Padding(2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(325, 86);
+            panel1.Size = new Size(316, 69);
             panel1.TabIndex = 0;
             panel1.Paint += panel1_Paint;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(70, 47);
+            label2.Location = new Point(83, 32);
+            label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new Size(176, 25);
+            label2.Size = new Size(150, 20);
             label2.TabIndex = 1;
-            label2.Text = "Tus aromas favoritas";
+            label2.Text = "Gestion de Productos";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(92, 22);
+            label1.Location = new Point(94, 12);
+            label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(131, 25);
+            label1.Size = new Size(109, 20);
             label1.TabIndex = 0;
             label1.Text = "L'ENDROMEDE";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(46, 152);
+            label3.Location = new Point(37, 122);
+            label3.Margin = new Padding(2, 0, 2, 0);
             label3.Name = "label3";
-            label3.Size = new Size(108, 25);
+            label3.Size = new Size(88, 20);
             label3.TabIndex = 1;
             label3.Text = "ID Producto";
+            label3.Click += label3_Click;
             // 
             // textProducto
             // 
-            textProducto.Location = new Point(206, 149);
+            textProducto.Location = new Point(156, 122);
+            textProducto.Margin = new Padding(2);
             textProducto.Name = "textProducto";
             textProducto.ReadOnly = true;
-            textProducto.Size = new Size(150, 31);
+            textProducto.Size = new Size(121, 27);
             textProducto.TabIndex = 2;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(498, 155);
+            label4.Location = new Point(398, 124);
+            label4.Margin = new Padding(2, 0, 2, 0);
             label4.Name = "label4";
-            label4.Size = new Size(78, 25);
+            label4.Size = new Size(64, 20);
             label4.TabIndex = 3;
             label4.Text = "Nombre";
             // 
             // textNombre
             // 
-            textNombre.Location = new Point(626, 155);
+            textNombre.Location = new Point(474, 122);
+            textNombre.Margin = new Padding(2);
             textNombre.Name = "textNombre";
-            textNombre.Size = new Size(150, 31);
+            textNombre.Size = new Size(121, 27);
             textNombre.TabIndex = 4;
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(46, 266);
+            label5.Location = new Point(71, 189);
+            label5.Margin = new Padding(2, 0, 2, 0);
             label5.Name = "label5";
-            label5.Size = new Size(66, 25);
+            label5.Size = new Size(54, 20);
             label5.TabIndex = 5;
             label5.Text = "Aroma";
             // 
             // textAroma
             // 
-            textAroma.Location = new Point(166, 266);
+            textAroma.Location = new Point(156, 182);
+            textAroma.Margin = new Padding(2);
             textAroma.Name = "textAroma";
-            textAroma.Size = new Size(150, 31);
+            textAroma.Size = new Size(121, 27);
             textAroma.TabIndex = 6;
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(454, 266);
+            label6.Location = new Point(398, 189);
+            label6.Margin = new Padding(2, 0, 2, 0);
             label6.Name = "label6";
-            label6.Size = new Size(74, 25);
+            label6.Size = new Size(61, 20);
             label6.TabIndex = 7;
             label6.Text = "Tamaño";
             // 
             // textTamano
             // 
-            textTamano.Location = new Point(565, 266);
+            textTamano.Location = new Point(474, 189);
+            textTamano.Margin = new Padding(2);
             textTamano.Name = "textTamano";
-            textTamano.Size = new Size(150, 31);
+            textTamano.Size = new Size(121, 27);
             textTamano.TabIndex = 8;
             // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(60, 372);
+            label7.Location = new Point(75, 253);
+            label7.Margin = new Padding(2, 0, 2, 0);
             label7.Name = "label7";
-            label7.Size = new Size(60, 25);
+            label7.Size = new Size(50, 20);
             label7.TabIndex = 9;
             label7.Text = "Precio";
             // 
             // numericUpDownPrecio
             // 
             numericUpDownPrecio.DecimalPlaces = 2;
-            numericUpDownPrecio.Location = new Point(203, 382);
+            numericUpDownPrecio.Location = new Point(156, 251);
+            numericUpDownPrecio.Margin = new Padding(2);
             numericUpDownPrecio.Name = "numericUpDownPrecio";
-            numericUpDownPrecio.Size = new Size(180, 31);
+            numericUpDownPrecio.Size = new Size(144, 27);
             numericUpDownPrecio.TabIndex = 10;
             // 
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(58, 481);
+            label8.Location = new Point(71, 317);
+            label8.Margin = new Padding(2, 0, 2, 0);
             label8.Name = "label8";
-            label8.Size = new Size(66, 25);
+            label8.Size = new Size(54, 20);
             label8.TabIndex = 11;
             label8.Text = "Estado";
             // 
@@ -182,9 +198,10 @@
             checkBoxEstado.AutoSize = true;
             checkBoxEstado.Checked = true;
             checkBoxEstado.CheckState = CheckState.Checked;
-            checkBoxEstado.Location = new Point(195, 477);
+            checkBoxEstado.Location = new Point(156, 317);
+            checkBoxEstado.Margin = new Padding(2);
             checkBoxEstado.Name = "checkBoxEstado";
-            checkBoxEstado.Size = new Size(88, 29);
+            checkBoxEstado.Size = new Size(73, 24);
             checkBoxEstado.TabIndex = 12;
             checkBoxEstado.Text = "Activo";
             checkBoxEstado.UseVisualStyleBackColor = true;
@@ -192,26 +209,29 @@
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(483, 380);
+            label9.Location = new Point(398, 251);
+            label9.Margin = new Padding(2, 0, 2, 0);
             label9.Name = "label9";
-            label9.Size = new Size(55, 25);
+            label9.Size = new Size(45, 20);
             label9.TabIndex = 13;
             label9.Text = "Stock";
             // 
             // numericUpDownStock
             // 
-            numericUpDownStock.Location = new Point(593, 383);
+            numericUpDownStock.Location = new Point(474, 253);
+            numericUpDownStock.Margin = new Padding(2);
             numericUpDownStock.Maximum = new decimal(new int[] { 1000, 0, 0, 0 });
             numericUpDownStock.Name = "numericUpDownStock";
-            numericUpDownStock.Size = new Size(180, 31);
+            numericUpDownStock.Size = new Size(144, 27);
             numericUpDownStock.TabIndex = 14;
             // 
             // label10
             // 
             label10.AutoSize = true;
-            label10.Location = new Point(46, 680);
+            label10.Location = new Point(22, 490);
+            label10.Margin = new Padding(2, 0, 2, 0);
             label10.Name = "label10";
-            label10.Size = new Size(47, 25);
+            label10.Size = new Size(39, 20);
             label10.TabIndex = 15;
             label10.Text = "Lista";
             // 
@@ -221,66 +241,72 @@
             dataGridViewProductos.AllowUserToDeleteRows = false;
             dataGridViewProductos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewProductos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewProductos.Location = new Point(178, 594);
+            dataGridViewProductos.Location = new Point(75, 412);
+            dataGridViewProductos.Margin = new Padding(2);
             dataGridViewProductos.MultiSelect = false;
             dataGridViewProductos.Name = "dataGridViewProductos";
             dataGridViewProductos.ReadOnly = true;
             dataGridViewProductos.RowHeadersVisible = false;
             dataGridViewProductos.RowHeadersWidth = 62;
             dataGridViewProductos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridViewProductos.Size = new Size(360, 225);
+            dataGridViewProductos.Size = new Size(792, 230);
             dataGridViewProductos.TabIndex = 16;
             // 
             // buttonNuevo
             // 
-            buttonNuevo.Location = new Point(54, 542);
+            buttonNuevo.Location = new Point(71, 366);
+            buttonNuevo.Margin = new Padding(2);
             buttonNuevo.Name = "buttonNuevo";
-            buttonNuevo.Size = new Size(112, 34);
+            buttonNuevo.Size = new Size(90, 27);
             buttonNuevo.TabIndex = 17;
             buttonNuevo.Text = "Nuevo";
             buttonNuevo.UseVisualStyleBackColor = true;
             // 
             // buttonGuardar
             // 
-            buttonGuardar.Location = new Point(244, 542);
+            buttonGuardar.Location = new Point(201, 366);
+            buttonGuardar.Margin = new Padding(2);
             buttonGuardar.Name = "buttonGuardar";
-            buttonGuardar.Size = new Size(112, 34);
+            buttonGuardar.Size = new Size(90, 27);
             buttonGuardar.TabIndex = 18;
             buttonGuardar.Text = "Guardar";
             buttonGuardar.UseVisualStyleBackColor = true;
             // 
             // buttonActualizar
             // 
-            buttonActualizar.Location = new Point(426, 542);
+            buttonActualizar.Location = new Point(332, 366);
+            buttonActualizar.Margin = new Padding(2);
             buttonActualizar.Name = "buttonActualizar";
-            buttonActualizar.Size = new Size(112, 34);
+            buttonActualizar.Size = new Size(90, 27);
             buttonActualizar.TabIndex = 19;
             buttonActualizar.Text = "Actualizar";
             buttonActualizar.UseVisualStyleBackColor = true;
             // 
             // buttonEliminar
             // 
-            buttonEliminar.Location = new Point(593, 542);
+            buttonEliminar.Location = new Point(464, 366);
+            buttonEliminar.Margin = new Padding(2);
             buttonEliminar.Name = "buttonEliminar";
-            buttonEliminar.Size = new Size(112, 34);
+            buttonEliminar.Size = new Size(90, 27);
             buttonEliminar.TabIndex = 20;
             buttonEliminar.Text = "Eliminar";
             buttonEliminar.UseVisualStyleBackColor = true;
             // 
             // buttonBuscar
             // 
-            buttonBuscar.Location = new Point(733, 542);
+            buttonBuscar.Location = new Point(589, 366);
+            buttonBuscar.Margin = new Padding(2);
             buttonBuscar.Name = "buttonBuscar";
-            buttonBuscar.Size = new Size(112, 34);
+            buttonBuscar.Size = new Size(90, 27);
             buttonBuscar.TabIndex = 21;
             buttonBuscar.Text = "Buscar";
             buttonBuscar.UseVisualStyleBackColor = true;
             // 
             // FrmProductos
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1356, 816);
+            ClientSize = new Size(878, 653);
             Controls.Add(buttonBuscar);
             Controls.Add(buttonEliminar);
             Controls.Add(buttonActualizar);
@@ -303,6 +329,8 @@
             Controls.Add(textProducto);
             Controls.Add(label3);
             Controls.Add(panel1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            Margin = new Padding(2);
             Name = "FrmProductos";
             Text = "Productos";
             panel1.ResumeLayout(false);

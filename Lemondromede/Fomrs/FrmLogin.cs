@@ -1,9 +1,10 @@
 using System;
 using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 using Lemondromede.Services;
 
-namespace forms_de_el_proyecto_wwwww.Forms
+namespace Login.Forms
 {
     public partial class FrmLogin : Form
     {
@@ -54,6 +55,7 @@ namespace forms_de_el_proyecto_wwwww.Forms
             lblTitulo.Size = new Size(165, 32);
             lblTitulo.TabIndex = 0;
             lblTitulo.Text = "Iniciar sesion";
+            lblTitulo.Click += lblTitulo_Click;
             // 
             // lblCorreo
             // 
@@ -120,8 +122,15 @@ namespace forms_de_el_proyecto_wwwww.Forms
             // 
             // pctLogin
             // 
-            pctLogin.Image = Image.FromFile(
-    System.IO.Path.Combine(AppContext.BaseDirectory, "Resources", "login.png"));
+            string rutaImagenLogin = Path.Combine(
+                AppContext.BaseDirectory,
+                "Resources",
+                "login.png");
+            if (File.Exists(rutaImagenLogin))
+            {
+                pctLogin.Image = Image.FromFile(rutaImagenLogin);
+                pctLogin.SizeMode = PictureBoxSizeMode.Zoom;
+            }
             pctLogin.Location = new Point(135, 55);
             pctLogin.Name = "pctLogin";
             pctLogin.Size = new Size(65, 62);
@@ -207,6 +216,11 @@ namespace forms_de_el_proyecto_wwwww.Forms
                 MessageBox.Show("No se pudo validar el acceso: " + ex.Message,
                     "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void lblTitulo_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

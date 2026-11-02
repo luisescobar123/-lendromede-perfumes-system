@@ -17,7 +17,7 @@ namespace Lemondromede.Models
         public string NombreCategoria { get; set; } = string.Empty;
         [AllowNull]
 
-        public string Descripcion { get; set; }
+        public string Descripcion { get; set; } = string.Empty;
 
         //de uno a muchos
         public List<Producto> Productos { get; set; } = new();

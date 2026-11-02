@@ -4,7 +4,7 @@ using Lemondromede.Services;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 
-namespace forms_de_el_proyecto_wwwww.Forms
+namespace FmrUsuarioss.Forms
 
 {
     public class FmrUsuarios : Form
@@ -394,6 +394,14 @@ namespace forms_de_el_proyecto_wwwww.Forms
 
         private void InitializeComponent()
         {
+            SuspendLayout();
+            // 
+            // FmrUsuarios
+            // 
+            ClientSize = new Size(282, 253);
+            Name = "FmrUsuarios";
+            Load += FmrUsuarios_Load;
+            ResumeLayout(false);
 
         }
 
@@ -404,6 +412,11 @@ namespace forms_de_el_proyecto_wwwww.Forms
                 "Error de base de datos",
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Error);
+        }
+
+        private void FmrUsuarios_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

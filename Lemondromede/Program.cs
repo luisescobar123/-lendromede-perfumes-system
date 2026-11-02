@@ -1,4 +1,4 @@
-using forms_de_el_proyecto_wwwww.Forms;
+using Login.Forms;
 using Lemondromede.Fomrs;
 using System;
 
@@ -14,14 +14,14 @@ namespace Lemondromede
         {
             ApplicationConfiguration.Initialize();
 
-            // El login va primero: ShowDialog espera hasta que el formulario se cierre
+            
             using (var login = new FrmLogin())
             {
                 if (login.ShowDialog() != DialogResult.OK)
-                    return;   // canceló o falló 3 veces: la aplicación termina
+                    return;  
             }
 
-            Application.Run(new FmrDashboard());   // solo se llega aquí si el login fue OK
+            Application.Run(new FmrDashboard());   
 
         }
     }

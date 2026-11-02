@@ -7,7 +7,7 @@ using System.Windows.Forms;
 using Lemondromede.Services;
 using Lemondromede.Models;
 
-namespace forms_de_el_proyecto_wwwww.Forms
+namespace FmrVentass.Forms
 {
     public partial class FmrVentas : Form
     {
@@ -302,6 +302,7 @@ namespace forms_de_el_proyecto_wwwww.Forms
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FmrVentas";
             Text = "Gestion de ventas";
+            Load += FmrVentas_Load_1;
             ((ISupportInitialize)numCantidad).EndInit();
             ((ISupportInitialize)dgvDetalle).EndInit();
             ((ISupportInitialize)dgvVentas).EndInit();
@@ -480,6 +481,11 @@ namespace forms_de_el_proyecto_wwwww.Forms
             ActualizarTotal();
             cmbTipoVenta.SelectedIndex = 0;
             numCantidad.Value = 1;
+        }
+
+        private void FmrVentas_Load_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

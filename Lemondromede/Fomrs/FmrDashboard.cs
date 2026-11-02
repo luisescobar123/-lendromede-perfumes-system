@@ -1,8 +1,11 @@
-using forms_de_el_proyecto_wwwww.Forms;
+using FmrCategoriass.Forms;
 using Lemondromede.Services;
 using System;
 using System.Drawing;
+using System.Globalization;
 using System.Windows.Forms;
+using FmrVentass.Forms;
+using FmrUsuarioss.Forms;
 
 namespace Lemondromede.Fomrs
 {
@@ -27,8 +30,8 @@ namespace Lemondromede.Fomrs
             MinimumSize = new Size(700, 500);
 
             bool esAdmin = Sesion.EsAdministrador;
-            btnUsuarios.Visible = esAdmin;    
-            btnCategorias.Visible = esAdmin;   
+            btnUsuarios.Visible = esAdmin;
+            btnCategorias.Visible = esAdmin;
         }
 
         private void InitializeComponent()
@@ -206,6 +209,10 @@ namespace Lemondromede.Fomrs
         {
             FrmProductos formulario = new FrmProductos();
             formulario.Show();
+        }
+
+        private void toolStripStatusLabel1_Click(object sender, EventArgs e)
+        {
         }
     }
 }

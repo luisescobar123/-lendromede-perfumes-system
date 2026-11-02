@@ -5,7 +5,7 @@ using System.Windows.Forms;
 using Lemondromede.Services;
 using Lemondromede.Models;
 
-namespace forms_de_el_proyecto_wwwww.Forms
+namespace FmrCategoriass.Forms
 {
     public partial class FmrCategorias : Form
     {
@@ -20,7 +20,6 @@ namespace forms_de_el_proyecto_wwwww.Forms
         private Button btEliminar;
         private Button btBuscar;
         private DataGridView dgvCategorias;
-
         private readonly CategoriaService _service;
 
         public FmrCategorias()
@@ -94,6 +93,7 @@ namespace forms_de_el_proyecto_wwwww.Forms
             lblNombre.Size = new Size(67, 20);
             lblNombre.TabIndex = 3;
             lblNombre.Text = "Nombre:";
+            lblNombre.Click += lblNombre_Click;
             // 
             // txtNombre
             // 
@@ -101,6 +101,7 @@ namespace forms_de_el_proyecto_wwwww.Forms
             txtNombre.Name = "txtNombre";
             txtNombre.Size = new Size(125, 27);
             txtNombre.TabIndex = 4;
+            txtNombre.TextChanged += txtNombre_TextChanged;
             // 
             // btGuardar
             // 
@@ -326,6 +327,16 @@ namespace forms_de_el_proyecto_wwwww.Forms
             txtId.Text = string.Empty;
             txtNombre.Text = string.Empty;
             dgvCategorias.ClearSelection();
+        }
+
+        private void lblNombre_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtNombre_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
