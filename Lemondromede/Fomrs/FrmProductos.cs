@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,76 +12,324 @@ using Lemondromede.Data;
 using Lemondromede.Models;
 using Microsoft.EntityFrameworkCore;
 
-
 namespace Lemondromede.Fomrs
 {
-    public partial class FrmProductos : Form
-    {
-        public FrmProductos()
+        public partial class FrmProductos : Form
         {
-            InitializeComponent();
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-        }
-
-        private void buttonGuardar_Click(object sender, EventArgs e)
-        {
-            // Validar los campos obligatorios
-            if (string.IsNullOrWhiteSpace(textNombre.Text) ||
-                string.IsNullOrWhiteSpace(textCodigo.Text) ||
-                string.IsNullOrWhiteSpace(comboBoxMarca.Text) ||
-                string.IsNullOrWhiteSpace(comboBoxGenero.Text))
+            public FrmProductos()
             {
-                MessageBox.Show(
-                    "Completa el nombre, código, marca y género.",
-                    "Campos obligatorios",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Warning);
+                InitializeComponent();
 
-                return;
+                // Conectar los botones
+                buttonNuevo.Click += buttonNuevo_Click;
+                buttonGuardar.Click += buttonGuardar_Click;
+                buttonActualizar.Click += buttonActualizar_Click;
+                buttonEliminar.Click += buttonEliminar_Click;
+                buttonBuscar.Click += buttonBuscar_Click;
+
+                // Seleccionar productos desde la tabla
+                dataGridViewProductos.CellClick += dataGridViewProductos_CellClick;
+
+                // Cargar productos al abrir
+                this.Load += FrmProductos_Load;
             }
 
-            try
+            private void FrmProductos_Load(object sender, EventArgs e)
             {
-                using (var context = new LendromedeContext())
+                CargarProductos();
+                LimpiarCampos();
+            }
+
+            // MOSTRAR PRODUCTOS
+            private void CargarProductos()
+            {
+                try
                 {
-                    // Comprobar si existen categorías registradas
-                    bool existeCategoria = context.Categorias.Any();
-
-                    if (!existeCategoria)
+                    using (var context = new LendromedeContext())
                     {
-                        MessageBox.Show(
-                            "No hay categorías registradas. " +
-                            "Debemos preparar las categorías antes de guardar productos.",
-                            "Falta una categoría",
-                            MessageBoxButtons.OK,
-                            MessageBoxIcon.Warning);
+                        var productos = context.Productos
+                            .AsNoTracking()
+                            .Select(p => new
+                            {
+                                p.IdProducto,
+                                p.Nombre,
+                                p.Aroma,
+                                p.Tamano,
+                                p.Precio,
+                                p.Estado,
+                                p.Stock
+                            })
+                            .ToList();
 
-                        return;
+                        dataGridViewProductos.DataSource = productos;
                     }
-
+                }
+                catch (Exception ex)
+                {
                     MessageBox.Show(
-                        "Validación correcta. Los campos están completos " +
-                        "y existen categorías en la base de datos.",
-                        "Validación exitosa",
+                        "Error al cargar los productos:\n" + ex.Message,
+                        "Error",
                         MessageBoxButtons.OK,
-                        MessageBoxIcon.Information);
+                        MessageBoxIcon.Error);
                 }
             }
-            catch (Exception ex)
+
+            // LIMPIAR CAMPOS
+            private void LimpiarCampos()
             {
-                MessageBox.Show(
-                    "No se pudo comprobar la base de datos:\n" + ex.Message,
-                    "Error de conexión",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
+                textProducto.Clear();
+                textNombre.Clear();
+                textAroma.Clear();
+                textTamano.Clear();
+
+                numericUpDownPrecio.Value = 0;
+                numericUpDownStock.Value = 0;
+
+                checkBoxEstado.Checked = true;
+
+                dataGridViewProductos.ClearSelection();
+                textNombre.Focus();
+            }
+
+            // BOTÓN NUEVO
+            private void buttonNuevo_Click(object sender, EventArgs e)
+            {
+                LimpiarCampos();
+            }
+
+            // BOTÓN GUARDAR
+            private void buttonGuardar_Click(object sender, EventArgs e)
+            {
+                if (string.IsNullOrWhiteSpace(textNombre.Text))
+                {
+                    MessageBox.Show("Escribe el nombre del producto.");
+                    textNombre.Focus();
+                    return;
+                }
+
+                try
+                {
+                    using (var context = new LendromedeContext())
+                    {
+                        // Categoría predeterminada: Florales (ID 1)
+                        bool existeCategoria = context.Categorias
+                            .Any(c => c.IdCategoria == 1);
+
+                        if (!existeCategoria)
+                        {
+                            MessageBox.Show(
+                                "No existe la categoría predeterminada. Verifica que las categorías estén cargadas en la base de datos.");
+                            return;
+                        }
+
+                        Producto producto = new Producto
+                        {
+                            Nombre = textNombre.Text.Trim(),
+                            Aroma = textAroma.Text.Trim(),
+                            Tamano = textTamano.Text.Trim(),
+                            Precio = numericUpDownPrecio.Value,
+                            Estado = checkBoxEstado.Checked,
+                            Stock = Convert.ToInt32(numericUpDownStock.Value),
+                            IdCategoria = 1
+                        };
+
+                        context.Productos.Add(producto);
+                        context.SaveChanges();
+
+                        MessageBox.Show(
+                            "Producto guardado correctamente.",
+                            "Éxito",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Information);
+                    }
+
+                    CargarProductos();
+                    LimpiarCampos();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(
+                        "No se pudo guardar el producto:\n" + ex.Message,
+                        "Error",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                }
+            }
+
+            // SELECCIONAR UN PRODUCTO DE LA TABLA
+            private void dataGridViewProductos_CellClick(
+                object sender, DataGridViewCellEventArgs e)
+            {
+                if (e.RowIndex >= 0)
+                {
+                    var fila = dataGridViewProductos.Rows[e.RowIndex];
+
+                    textProducto.Text = fila.Cells["IdProducto"].Value.ToString();
+                    textNombre.Text = fila.Cells["Nombre"].Value.ToString();
+                    textAroma.Text = fila.Cells["Aroma"].Value?.ToString() ?? "";
+                    textTamano.Text = fila.Cells["Tamano"].Value?.ToString() ?? "";
+
+                    numericUpDownPrecio.Value =
+                        Convert.ToDecimal(fila.Cells["Precio"].Value);
+
+                    checkBoxEstado.Checked =
+                        Convert.ToBoolean(fila.Cells["Estado"].Value);
+
+                    numericUpDownStock.Value =
+                        Convert.ToDecimal(fila.Cells["Stock"].Value);
+                }
+            }
+
+            // BOTÓN ACTUALIZAR
+            private void buttonActualizar_Click(object sender, EventArgs e)
+            {
+                if (!int.TryParse(textProducto.Text, out int id))
+                {
+                    MessageBox.Show("Selecciona un producto de la lista.");
+                    return;
+                }
+
+                try
+                {
+                    using (var context = new LendromedeContext())
+                    {
+                        var producto = context.Productos
+                            .FirstOrDefault(p => p.IdProducto == id);
+
+                        if (producto == null)
+                        {
+                            MessageBox.Show("No se encontró el producto.");
+                            return;
+                        }
+
+                        producto.Nombre = textNombre.Text.Trim();
+                        producto.Aroma = textAroma.Text.Trim();
+                        producto.Tamano = textTamano.Text.Trim();
+                        producto.Precio = numericUpDownPrecio.Value;
+                        producto.Estado = checkBoxEstado.Checked;
+                        producto.Stock = Convert.ToInt32(numericUpDownStock.Value);
+
+                        context.SaveChanges();
+                    }
+
+                    MessageBox.Show("Producto actualizado correctamente.");
+
+                    CargarProductos();
+                    LimpiarCampos();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(
+                        "No se pudo actualizar el producto:\n" + ex.Message);
+                }
+            }
+
+            // BOTÓN ELIMINAR
+            private void buttonEliminar_Click(object sender, EventArgs e)
+            {
+                if (!int.TryParse(textProducto.Text, out int id))
+                {
+                    MessageBox.Show("Selecciona un producto de la lista.");
+                    return;
+                }
+
+                DialogResult respuesta = MessageBox.Show(
+                    "¿Estás seguro de eliminar este producto?",
+                    "Confirmar eliminación",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question);
+
+                if (respuesta != DialogResult.Yes)
+                    return;
+
+                try
+                {
+                    using (var context = new LendromedeContext())
+                    {
+                        var producto = context.Productos
+                            .FirstOrDefault(p => p.IdProducto == id);
+
+                        if (producto == null)
+                        {
+                            MessageBox.Show("No se encontró el producto.");
+                            return;
+                        }
+
+                        context.Productos.Remove(producto);
+                        context.SaveChanges();
+                    }
+
+                    MessageBox.Show("Producto eliminado correctamente.");
+
+                    CargarProductos();
+                    LimpiarCampos();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(
+                        "No se pudo eliminar el producto. Puede estar relacionado con ventas o inventario.\n\n" + ex.Message,
+                        "Error",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                }
+            }
+
+            // BOTÓN BUSCAR POR NOMBRE
+            private void buttonBuscar_Click(object sender, EventArgs e)
+            {
+                if (string.IsNullOrWhiteSpace(textNombre.Text))
+                {
+                    MessageBox.Show("Escribe el nombre del producto que deseas buscar.");
+                    textNombre.Focus();
+                    return;
+                }
+
+                try
+                {
+                    using (var context = new LendromedeContext())
+                    {
+                        var producto = context.Productos
+                            .AsNoTracking()
+                            .FirstOrDefault(p =>
+                                p.Nombre.Contains(textNombre.Text.Trim()));
+
+                        if (producto == null)
+                        {
+                            MessageBox.Show("No se encontró el producto.");
+                            return;
+                        }
+
+                        textProducto.Text = producto.IdProducto.ToString();
+                        textNombre.Text = producto.Nombre;
+                        textAroma.Text = producto.Aroma;
+                        textTamano.Text = producto.Tamano;
+                        numericUpDownPrecio.Value = producto.Precio;
+                        checkBoxEstado.Checked = producto.Estado;
+                        numericUpDownStock.Value = producto.Stock;
+
+                        // Seleccionar el producto encontrado en la tabla
+                        foreach (DataGridViewRow fila in dataGridViewProductos.Rows)
+                        {
+                            if (Convert.ToInt32(fila.Cells["IdProducto"].Value)
+                                == producto.IdProducto)
+                            {
+                                fila.Selected = true;
+                                dataGridViewProductos.CurrentCell =
+                                    fila.Cells["Nombre"];
+                                break;
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(
+                        "Error al buscar el producto:\n" + ex.Message);
+                }
+            }
+
+            private void panel1_Paint(object sender, PaintEventArgs e)
+            {
             }
         }
     }
-}
