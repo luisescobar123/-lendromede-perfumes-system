@@ -19,5 +19,8 @@
     <Compile Update="Fomrs\FrmProductos.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Fomrs\FrmVentasMaestroDetalle.cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
 </Project>

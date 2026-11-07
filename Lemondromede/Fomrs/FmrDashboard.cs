@@ -36,6 +36,7 @@ namespace Lemondromede.Fomrs
             btnCategorias = new Button();
             btnVentas = new Button();
             btnUsuarios = new Button();
+            btnVentasDetalle = new Button();
             pnlContenido = new Panel();
             pnlBanner = new Panel();
             lblLociones = new Label();
@@ -79,6 +80,7 @@ namespace Lemondromede.Fomrs
             pnlMenu.Controls.Add(btnCategorias);
             pnlMenu.Controls.Add(btnVentas);
             pnlMenu.Controls.Add(btnUsuarios);
+            pnlMenu.Controls.Add(btnVentasDetalle);
             pnlMenu.Dock = DockStyle.Left;
             pnlMenu.Location = new Point(0, 0);
             pnlMenu.Name = "pnlMenu";
@@ -119,9 +121,9 @@ namespace Lemondromede.Fomrs
             buttonProductos.FlatStyle = FlatStyle.Flat;
             buttonProductos.Font = new Font("Segoe UI", 10F);
             buttonProductos.ForeColor = Color.White;
-            buttonProductos.Location = new Point(20, 400);
+            buttonProductos.Location = new Point(20, 372);
             buttonProductos.Name = "buttonProductos";
-            buttonProductos.Size = new Size(260, 60);
+            buttonProductos.Size = new Size(260, 45);
             buttonProductos.TabIndex = 4;
             buttonProductos.Text = "Productos";
             buttonProductos.UseVisualStyleBackColor = false;
@@ -135,9 +137,9 @@ namespace Lemondromede.Fomrs
             btnCategorias.FlatStyle = FlatStyle.Flat;
             btnCategorias.Font = new Font("Segoe UI", 10F);
             btnCategorias.ForeColor = Color.White;
-            btnCategorias.Location = new Point(20, 325);
+            btnCategorias.Location = new Point(20, 320);
             btnCategorias.Name = "btnCategorias";
-            btnCategorias.Size = new Size(260, 60);
+            btnCategorias.Size = new Size(260, 45);
             btnCategorias.TabIndex = 1;
             btnCategorias.Text = "Categorias";
             btnCategorias.UseVisualStyleBackColor = false;
@@ -151,9 +153,9 @@ namespace Lemondromede.Fomrs
             btnVentas.FlatStyle = FlatStyle.Flat;
             btnVentas.Font = new Font("Segoe UI", 10F);
             btnVentas.ForeColor = Color.White;
-            btnVentas.Location = new Point(20, 550);
+            btnVentas.Location = new Point(20, 476);
             btnVentas.Name = "btnVentas";
-            btnVentas.Size = new Size(260, 60);
+            btnVentas.Size = new Size(260, 45);
             btnVentas.TabIndex = 3;
             btnVentas.Text = "Ventas";
             btnVentas.UseVisualStyleBackColor = false;
@@ -167,13 +169,29 @@ namespace Lemondromede.Fomrs
             btnUsuarios.FlatStyle = FlatStyle.Flat;
             btnUsuarios.Font = new Font("Segoe UI", 10F);
             btnUsuarios.ForeColor = Color.White;
-            btnUsuarios.Location = new Point(20, 475);
+            btnUsuarios.Location = new Point(20, 424);
             btnUsuarios.Name = "btnUsuarios";
-            btnUsuarios.Size = new Size(260, 60);
+            btnUsuarios.Size = new Size(260, 45);
             btnUsuarios.TabIndex = 2;
             btnUsuarios.Text = "Usuarios";
             btnUsuarios.UseVisualStyleBackColor = false;
             btnUsuarios.Click += btnUsuarios_Click;
+            // 
+            // btnVentasDetalle
+            // 
+            btnVentasDetalle.BackColor = Color.FromArgb(55, 15, 75);
+            btnVentasDetalle.Cursor = Cursors.Hand;
+            btnVentasDetalle.FlatAppearance.BorderColor = Color.FromArgb(90, 35, 120);
+            btnVentasDetalle.FlatStyle = FlatStyle.Flat;
+            btnVentasDetalle.Font = new Font("Segoe UI", 10F);
+            btnVentasDetalle.ForeColor = Color.White;
+            btnVentasDetalle.Location = new Point(20, 528);
+            btnVentasDetalle.Name = "btnVentasDetalle";
+            btnVentasDetalle.Size = new Size(260, 45);
+            btnVentasDetalle.TabIndex = 6;
+            btnVentasDetalle.Text = "Consulta de ventas";
+            btnVentasDetalle.UseVisualStyleBackColor = false;
+            btnVentasDetalle.Click += btnVentasDetalle_Click;
             // 
             // pnlContenido
             // 
@@ -428,6 +446,11 @@ namespace Lemondromede.Fomrs
             using var formulario = new FmrVentas();
             formulario.ShowDialog(this);
         }
+        private void btnVentasDetalle_Click(object sender, EventArgs e)
+        {
+            using var formulario = new FrmVentasMaestroDetalle();
+            formulario.ShowDialog(this);
+        }
 
         private void pctFondo_Click(object sender, EventArgs e)
         {
@@ -465,6 +488,7 @@ namespace Lemondromede.Fomrs
         private Button btnCategorias;
         private Button btnVentas;
         private Button btnUsuarios;
+        private Button btnVentasDetalle;
         private Label lblMenu;
         private Panel pnlBanner;
         private Label lblLociones;

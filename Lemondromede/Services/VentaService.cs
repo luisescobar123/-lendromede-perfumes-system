@@ -62,6 +62,37 @@ namespace Lemondromede.Services
                 .FirstOrDefault(v => v.IdVenta == id);
         }
 
+        // ----- Maestro-detalle: consultas para la pantalla de consulta -----
+
+        public List<VentaResumen> ObtenerResumenVentas()
+        {
+            return _context.Ventas
+                .AsNoTracking()
+                .OrderByDescending(v => v.Fecha)
+                .Select(v => new VentaResumen(
+                    v.IdVenta,
+                    v.Fecha,
+                    v.Cliente.Nombre,
+                    v.Usuario.Nombre,
+                    v.TipoVenta,
+                    v.Total,
+                    v.Estado ? "Activa" : "Anulada"))
+                .ToList();
+        }
+
+        public List<DetalleResumen> ObtenerDetalleDeVenta(int idVenta)
+        {
+            return _context.Dventas
+                .AsNoTracking()
+                .Where(d => d.IdVenta == idVenta)
+                .Select(d => new DetalleResumen(
+                    d.Producto.Nombre,
+                    d.Cantidad,
+                    d.PrecioUnitario,
+                    d.Subtotal))
+                .ToList();
+        }
+
         // ----- Crear una venta completa (encabezado + líneas) -----
 
         public void CrearVenta(Venta venta)
