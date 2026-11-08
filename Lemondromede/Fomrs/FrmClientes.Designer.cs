@@ -1,4 +1,4 @@
-﻿namespace Lemondromede.Fomrs
+namespace Lemondromede.Fomrs
 {
     partial class FrmClientes
     {
@@ -28,9 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            labelIdCliente = new Label();
-            textIdCliente = new TextBox();
             labelNombre = new Label();
+            textIdCliente = new TextBox();
             textNombre = new TextBox();
             labelNumero = new Label();
             textNumero = new TextBox();
@@ -45,211 +44,260 @@
             buttonBuscar = new Button();
             buttonLimpiar = new Button();
             dataGridViewClientes = new DataGridView();
-            ColIdCliente = new DataGridViewTextBoxColumn();
             ColNombre = new DataGridViewTextBoxColumn();
             ColNumero = new DataGridViewTextBoxColumn();
             ColCorreo = new DataGridViewTextBoxColumn();
             ColDirección = new DataGridViewTextBoxColumn();
+            label1 = new Label();
+            panel1 = new Panel();
             ((System.ComponentModel.ISupportInitialize)dataGridViewClientes).BeginInit();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
-            // labelIdCliente
+            // textIdCliente (oculto: solo guarda el id del cliente seleccionado)
             // 
-            labelIdCliente.AutoSize = true;
-            labelIdCliente.Location = new Point(17, 26);
-            labelIdCliente.Name = "labelIdCliente";
-            labelIdCliente.Size = new Size(92, 25);
-            labelIdCliente.TabIndex = 0;
-            labelIdCliente.Text = "ID Cliente:";
-            // 
-            // textIdCliente
-            // 
-            textIdCliente.Location = new Point(158, 26);
+            textIdCliente.Location = new Point(750, 83);
             textIdCliente.Name = "textIdCliente";
             textIdCliente.ReadOnly = true;
-            textIdCliente.Size = new Size(200, 31);
+            textIdCliente.Size = new Size(60, 27);
             textIdCliente.TabIndex = 1;
+            textIdCliente.TabStop = false;
+            textIdCliente.Visible = false;
+            textIdCliente.TextChanged += textIdCliente_TextChanged;
             // 
             // labelNombre
             // 
             labelNombre.AutoSize = true;
-            labelNombre.Location = new Point(17, 80);
+            labelNombre.Location = new Point(29, 83);
+            labelNombre.Margin = new Padding(2, 0, 2, 0);
             labelNombre.Name = "labelNombre";
-            labelNombre.Size = new Size(82, 25);
+            labelNombre.Size = new Size(67, 20);
             labelNombre.TabIndex = 2;
             labelNombre.Text = "Nombre:";
             // 
             // textNombre
             // 
-            textNombre.Location = new Point(148, 80);
+            textNombre.Location = new Point(110, 83);
+            textNombre.Margin = new Padding(2, 2, 2, 2);
             textNombre.MaxLength = 100;
             textNombre.Name = "textNombre";
-            textNombre.Size = new Size(250, 31);
+            textNombre.Size = new Size(234, 27);
             textNombre.TabIndex = 3;
             // 
             // labelNumero
             // 
             labelNumero.AutoSize = true;
-            labelNumero.Location = new Point(12, 157);
+            labelNumero.Location = new Point(368, 90);
+            labelNumero.Margin = new Padding(2, 0, 2, 0);
             labelNumero.Name = "labelNumero";
-            labelNumero.Size = new Size(177, 25);
+            labelNumero.Size = new Size(147, 20);
             labelNumero.TabIndex = 4;
             labelNumero.Text = "Número de teléfono:";
             // 
             // textNumero
             // 
-            textNumero.Location = new Point(236, 157);
+            textNumero.Location = new Point(519, 87);
+            textNumero.Margin = new Padding(2, 2, 2, 2);
             textNumero.MaxLength = 15;
             textNumero.Name = "textNumero";
-            textNumero.Size = new Size(250, 31);
+            textNumero.PlaceholderText = "Ej: 2222-7777";
+            textNumero.Size = new Size(201, 27);
             textNumero.TabIndex = 5;
             // 
             // labelCorreo
             // 
             labelCorreo.AutoSize = true;
-            labelCorreo.Location = new Point(17, 220);
+            labelCorreo.Location = new Point(368, 133);
+            labelCorreo.Margin = new Padding(2, 0, 2, 0);
             labelCorreo.Name = "labelCorreo";
-            labelCorreo.Size = new Size(161, 25);
+            labelCorreo.Size = new Size(135, 20);
             labelCorreo.TabIndex = 6;
             labelCorreo.Text = "Correo Electrónico:";
             // 
             // textCorreo
             // 
-            textCorreo.Location = new Point(236, 220);
+            textCorreo.Location = new Point(519, 130);
+            textCorreo.Margin = new Padding(2, 2, 2, 2);
             textCorreo.MaxLength = 256;
             textCorreo.Name = "textCorreo";
-            textCorreo.Size = new Size(250, 31);
+            textCorreo.Size = new Size(201, 27);
             textCorreo.TabIndex = 7;
             // 
             // labelDireccion
             // 
             labelDireccion.AutoSize = true;
-            labelDireccion.Location = new Point(20, 282);
+            labelDireccion.Location = new Point(22, 133);
+            labelDireccion.Margin = new Padding(2, 0, 2, 0);
             labelDireccion.Name = "labelDireccion";
-            labelDireccion.Size = new Size(89, 25);
+            labelDireccion.Size = new Size(75, 20);
             labelDireccion.TabIndex = 8;
             labelDireccion.Text = "Dirección:";
             // 
             // textDireccion
             // 
-            textDireccion.Location = new Point(182, 269);
+            textDireccion.Location = new Point(101, 130);
+            textDireccion.Margin = new Padding(2, 2, 2, 2);
             textDireccion.MaxLength = 200;
             textDireccion.Multiline = true;
             textDireccion.Name = "textDireccion";
-            textDireccion.Size = new Size(400, 50);
+            textDireccion.Size = new Size(243, 89);
             textDireccion.TabIndex = 9;
             // 
             // buttonNuevo
             // 
-            buttonNuevo.Location = new Point(9, 332);
+            buttonNuevo.BackColor = Color.Purple;
+            buttonNuevo.ForeColor = SystemColors.ButtonHighlight;
+            buttonNuevo.Location = new Point(7, 266);
+            buttonNuevo.Margin = new Padding(2, 2, 2, 2);
             buttonNuevo.Name = "buttonNuevo";
-            buttonNuevo.Size = new Size(100, 35);
+            buttonNuevo.Size = new Size(80, 28);
             buttonNuevo.TabIndex = 10;
             buttonNuevo.Text = "Nuevo";
-            buttonNuevo.UseVisualStyleBackColor = true;
+            buttonNuevo.UseVisualStyleBackColor = false;
             // 
             // buttonGuardar
             // 
-            buttonGuardar.Location = new Point(138, 331);
+            buttonGuardar.BackColor = Color.Purple;
+            buttonGuardar.ForeColor = SystemColors.ButtonHighlight;
+            buttonGuardar.Location = new Point(110, 265);
+            buttonGuardar.Margin = new Padding(2, 2, 2, 2);
             buttonGuardar.Name = "buttonGuardar";
-            buttonGuardar.Size = new Size(100, 35);
+            buttonGuardar.Size = new Size(80, 28);
             buttonGuardar.TabIndex = 11;
             buttonGuardar.Text = "Guardar";
-            buttonGuardar.UseVisualStyleBackColor = true;
+            buttonGuardar.UseVisualStyleBackColor = false;
             // 
             // buttonActualizar
             // 
-            buttonActualizar.Location = new Point(258, 332);
+            buttonActualizar.BackColor = Color.Purple;
+            buttonActualizar.ForeColor = SystemColors.ButtonHighlight;
+            buttonActualizar.Location = new Point(206, 266);
+            buttonActualizar.Margin = new Padding(2, 2, 2, 2);
             buttonActualizar.Name = "buttonActualizar";
-            buttonActualizar.Size = new Size(100, 35);
+            buttonActualizar.Size = new Size(80, 28);
             buttonActualizar.TabIndex = 12;
             buttonActualizar.Text = "Actualizar";
-            buttonActualizar.UseVisualStyleBackColor = true;
+            buttonActualizar.UseVisualStyleBackColor = false;
             // 
             // buttonEliminar
             // 
-            buttonEliminar.Location = new Point(385, 332);
+            buttonEliminar.BackColor = Color.Purple;
+            buttonEliminar.ForeColor = SystemColors.ButtonHighlight;
+            buttonEliminar.Location = new Point(308, 266);
+            buttonEliminar.Margin = new Padding(2, 2, 2, 2);
             buttonEliminar.Name = "buttonEliminar";
-            buttonEliminar.Size = new Size(112, 34);
+            buttonEliminar.Size = new Size(90, 27);
             buttonEliminar.TabIndex = 13;
             buttonEliminar.Text = "Eliminar";
-            buttonEliminar.UseVisualStyleBackColor = true;
+            buttonEliminar.UseVisualStyleBackColor = false;
             // 
             // buttonBuscar
             // 
-            buttonBuscar.Location = new Point(532, 332);
+            buttonBuscar.BackColor = Color.Purple;
+            buttonBuscar.ForeColor = SystemColors.ButtonHighlight;
+            buttonBuscar.Location = new Point(426, 266);
+            buttonBuscar.Margin = new Padding(2, 2, 2, 2);
             buttonBuscar.Name = "buttonBuscar";
-            buttonBuscar.Size = new Size(112, 34);
+            buttonBuscar.Size = new Size(90, 27);
             buttonBuscar.TabIndex = 14;
             buttonBuscar.Text = "Buscar";
-            buttonBuscar.UseVisualStyleBackColor = true;
+            buttonBuscar.UseVisualStyleBackColor = false;
             // 
             // buttonLimpiar
             // 
-            buttonLimpiar.Location = new Point(683, 332);
+            buttonLimpiar.BackColor = Color.Purple;
+            buttonLimpiar.ForeColor = SystemColors.ButtonHighlight;
+            buttonLimpiar.Location = new Point(546, 266);
+            buttonLimpiar.Margin = new Padding(2, 2, 2, 2);
             buttonLimpiar.Name = "buttonLimpiar";
-            buttonLimpiar.Size = new Size(112, 34);
+            buttonLimpiar.Size = new Size(90, 27);
             buttonLimpiar.TabIndex = 15;
             buttonLimpiar.Text = "Limpiar";
-            buttonLimpiar.UseVisualStyleBackColor = true;
+            buttonLimpiar.UseVisualStyleBackColor = false;
             // 
             // dataGridViewClientes
             // 
             dataGridViewClientes.AllowUserToAddRows = false;
             dataGridViewClientes.AllowUserToDeleteRows = false;
+            dataGridViewClientes.AutoGenerateColumns = false;
             dataGridViewClientes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewClientes.BorderStyle = BorderStyle.Fixed3D;
             dataGridViewClientes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewClientes.Columns.AddRange(new DataGridViewColumn[] { ColIdCliente, ColNombre, ColNumero, ColCorreo, ColDirección });
-            dataGridViewClientes.Location = new Point(0, 394);
+            dataGridViewClientes.Columns.AddRange(new DataGridViewColumn[] { ColNombre, ColNumero, ColCorreo, ColDirección });
+            dataGridViewClientes.Location = new Point(7, 315);
+            dataGridViewClientes.Margin = new Padding(2, 2, 2, 2);
             dataGridViewClientes.MultiSelect = false;
             dataGridViewClientes.Name = "dataGridViewClientes";
+            dataGridViewClientes.ReadOnly = true;
             dataGridViewClientes.RowHeadersVisible = false;
             dataGridViewClientes.RowHeadersWidth = 62;
             dataGridViewClientes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridViewClientes.Size = new Size(1000, 220);
+            dataGridViewClientes.Size = new Size(844, 176);
             dataGridViewClientes.TabIndex = 16;
-            // 
-            // ColIdCliente
-            // 
-            ColIdCliente.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            ColIdCliente.HeaderText = "ID Cliente";
-            ColIdCliente.MinimumWidth = 8;
-            ColIdCliente.Name = "ColIdCliente";
             // 
             // ColNombre
             // 
             ColNombre.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            ColNombre.DataPropertyName = "Nombre";
             ColNombre.HeaderText = "Nombre";
             ColNombre.MinimumWidth = 8;
             ColNombre.Name = "ColNombre";
+            ColNombre.ReadOnly = true;
             // 
             // ColNumero
             // 
             ColNumero.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            ColNumero.DataPropertyName = "Numero";
             ColNumero.HeaderText = "Número de teléfono";
             ColNumero.MinimumWidth = 8;
             ColNumero.Name = "ColNumero";
+            ColNumero.ReadOnly = true;
             // 
             // ColCorreo
             // 
             ColCorreo.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            ColCorreo.DataPropertyName = "Correo";
             ColCorreo.HeaderText = "Correo electrónico";
             ColCorreo.MinimumWidth = 8;
             ColCorreo.Name = "ColCorreo";
+            ColCorreo.ReadOnly = true;
             // 
             // ColDirección
             // 
             ColDirección.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            ColDirección.DataPropertyName = "Direccion";
             ColDirección.HeaderText = "Dirección";
             ColDirección.MinimumWidth = 8;
             ColDirección.Name = "ColDirección";
+            ColDirección.ReadOnly = true;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.BackColor = Color.FromArgb(50, 10, 80);
+            label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = SystemColors.ButtonHighlight;
+            label1.Location = new Point(332, 18);
+            label1.Margin = new Padding(2, 0, 2, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(194, 28);
+            label1.TabIndex = 17;
+            label1.Text = "Gestion de Clientes";
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.FromArgb(50, 10, 80);
+            panel1.Controls.Add(label1);
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(864, 65);
+            panel1.TabIndex = 18;
             // 
             // FrmClientes
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1078, 644);
+            ClientSize = new Size(862, 515);
             Controls.Add(dataGridViewClientes);
             Controls.Add(buttonLimpiar);
             Controls.Add(buttonBuscar);
@@ -264,24 +312,25 @@
             Controls.Add(textNumero);
             Controls.Add(labelNumero);
             Controls.Add(textNombre);
-            Controls.Add(labelNombre);
             Controls.Add(textIdCliente);
-            Controls.Add(labelIdCliente);
+            Controls.Add(labelNombre);
+            Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Margin = new Padding(2, 2, 2, 2);
             MaximizeBox = false;
             Name = "FrmClientes";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Gestión de Clientes";
             ((System.ComponentModel.ISupportInitialize)dataGridViewClientes).EndInit();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-
-        private Label labelIdCliente;
-        private TextBox textIdCliente;
         private Label labelNombre;
+        private TextBox textIdCliente;
         private TextBox textNombre;
         private Label labelNumero;
         private TextBox textNumero;
@@ -296,10 +345,11 @@
         private Button buttonBuscar;
         private Button buttonLimpiar;
         private DataGridView dataGridViewClientes;
-        private DataGridViewTextBoxColumn ColIdCliente;
         private DataGridViewTextBoxColumn ColNombre;
         private DataGridViewTextBoxColumn ColNumero;
         private DataGridViewTextBoxColumn ColCorreo;
         private DataGridViewTextBoxColumn ColDirección;
+        private Label label1;
+        private Panel panel1;
     }
 }

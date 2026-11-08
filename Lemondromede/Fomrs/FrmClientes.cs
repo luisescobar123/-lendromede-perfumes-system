@@ -1,4 +1,4 @@
-﻿
+
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -22,7 +22,6 @@ namespace Lemondromede.Fomrs
             InitializeComponent();
 
             // Configuración de la tabla
-            dataGridViewClientes.ReadOnly = true;
             dataGridViewClientes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridViewClientes.MultiSelect = false;
             dataGridViewClientes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
@@ -36,9 +35,30 @@ namespace Lemondromede.Fomrs
             buttonLimpiar.Click += buttonLimpiar_Click;
 
             // Detectar selección de la tabla
-            dataGridViewClientes.CellClick += dataGridViewClientes_CellClick;
+            dataGridViewClientes.SelectionChanged += dataGridViewClientes_SelectionChanged;
 
             CargarClientes();
+
+            // Al abrir el formulario no debe quedar nada seleccionado
+            Shown += (_, _) => LimpiarCampos();
+            ActualizarEstadoBotones();
+        }
+
+        // true mientras se llena la tabla, para que la selección automática
+        // de la primera fila no rellene los campos
+        private bool _cargando;
+
+        // Actualizar y Eliminar solo funcionan si hay un cliente seleccionado
+        private void textIdCliente_TextChanged(object sender, EventArgs e)
+        {
+            ActualizarEstadoBotones();
+        }
+
+        private void ActualizarEstadoBotones()
+        {
+            bool haySeleccion = textIdCliente.Text.Length > 0;
+            buttonActualizar.Enabled = haySeleccion;
+            buttonEliminar.Enabled = haySeleccion;
         }
 
         // MOSTRAR CLIENTES
@@ -59,17 +79,17 @@ namespace Lemondromede.Fomrs
                     }
 
                     var clientes = consulta
-                        .Select(c => new
-                        {
-                            c.IdCliente,
-                            c.Nombre,
-                            c.Numero,
-                            c.Correo,
-                            c.Direccion
-                        })
+                        .OrderBy(c => c.IdCliente)
                         .ToList();
 
+                    _cargando = true;
                     dataGridViewClientes.DataSource = clientes;
+                    _cargando = false;
+
+                    // Después de cargar no queda ninguna fila seleccionada
+                    dataGridViewClientes.ClearSelection();
+                    dataGridViewClientes.CurrentCell = null;
+                    textIdCliente.Clear();
                 }
             }
             catch (Exception ex)
@@ -257,18 +277,21 @@ namespace Lemondromede.Fomrs
         }
 
         // SELECCIONAR CLIENTE DE LA TABLA
-        private void dataGridViewClientes_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridViewClientes_SelectionChanged(object sender, EventArgs e)
         {
-            if (e.RowIndex < 0)
+            if (_cargando)
                 return;
 
-            DataGridViewRow fila = dataGridViewClientes.Rows[e.RowIndex];
+            if (dataGridViewClientes.CurrentRow == null ||
+                !dataGridViewClientes.CurrentRow.Selected ||
+                dataGridViewClientes.CurrentRow.DataBoundItem is not Cliente cliente)
+                return;
 
-            textIdCliente.Text = fila.Cells["IdCliente"].Value?.ToString();
-            textNombre.Text = fila.Cells["Nombre"].Value?.ToString();
-            textNumero.Text = fila.Cells["Numero"].Value?.ToString();
-            textCorreo.Text = fila.Cells["Correo"].Value?.ToString();
-            textDireccion.Text = fila.Cells["Direccion"].Value?.ToString();
+            textIdCliente.Text = cliente.IdCliente.ToString();
+            textNombre.Text = cliente.Nombre;
+            textNumero.Text = cliente.Numero;
+            textCorreo.Text = cliente.Correo;
+            textDireccion.Text = cliente.Direccion;
         }
 
         // LIMPIAR
@@ -287,6 +310,7 @@ namespace Lemondromede.Fomrs
             textDireccion.Clear();
 
             dataGridViewClientes.ClearSelection();
+            dataGridViewClientes.CurrentCell = null;
             textNombre.Focus();
         }
     }

@@ -90,6 +90,8 @@ namespace Lemondromede.Fomrs
             checkBoxEstado.Checked = true;
 
             dataGridViewProductos.ClearSelection();
+            buttonActualizar.Enabled = false;  
+            buttonEliminar.Enabled = false;
             textNombre.Focus();
         }
 
@@ -180,6 +182,9 @@ namespace Lemondromede.Fomrs
                 numericUpDownStock.Value =
                     Convert.ToDecimal(fila.Cells["Stock"].Value);
             }
+            bool haySeleccion = dataGridViewProductos.CurrentRow != null;
+            buttonActualizar.Enabled = haySeleccion;
+            buttonEliminar.Enabled = haySeleccion;
         }
 
         // BOTÓN ACTUALIZAR

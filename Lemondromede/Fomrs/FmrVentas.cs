@@ -39,6 +39,7 @@ namespace FmrVentass.Forms
         private DataGridView dgvVentas;
 
         private readonly VentaService _service;
+        private Panel pnlVentas;
         private BindingList<DetalleVenta> _lineasVenta;
 
         public FmrVentas()
@@ -82,24 +83,28 @@ namespace FmrVentass.Forms
             btGuardarVenta = new Button();
             btNuevaVenta = new Button();
             dgvVentas = new DataGridView();
+            pnlVentas = new Panel();
             ((ISupportInitialize)numCantidad).BeginInit();
             ((ISupportInitialize)dgvDetalle).BeginInit();
             ((ISupportInitialize)dgvVentas).BeginInit();
+            pnlVentas.SuspendLayout();
             SuspendLayout();
             // 
             // lblTitulo
             // 
             lblTitulo.AutoSize = true;
-            lblTitulo.Location = new Point(240, 20);
+            lblTitulo.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblTitulo.ForeColor = SystemColors.ButtonHighlight;
+            lblTitulo.Location = new Point(452, 21);
             lblTitulo.Name = "lblTitulo";
-            lblTitulo.Size = new Size(126, 20);
+            lblTitulo.Size = new Size(181, 28);
             lblTitulo.TabIndex = 0;
             lblTitulo.Text = "Gestion de ventas";
             // 
             // lblCliente
             // 
             lblCliente.AutoSize = true;
-            lblCliente.Location = new Point(20, 60);
+            lblCliente.Location = new Point(20, 93);
             lblCliente.Name = "lblCliente";
             lblCliente.Size = new Size(58, 20);
             lblCliente.TabIndex = 1;
@@ -108,15 +113,15 @@ namespace FmrVentass.Forms
             // cmbCliente
             // 
             cmbCliente.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbCliente.Location = new Point(110, 57);
+            cmbCliente.Location = new Point(110, 90);
             cmbCliente.Name = "cmbCliente";
-            cmbCliente.Size = new Size(200, 28);
+            cmbCliente.Size = new Size(223, 28);
             cmbCliente.TabIndex = 2;
             // 
             // lblUsuario
             // 
             lblUsuario.AutoSize = true;
-            lblUsuario.Location = new Point(330, 60);
+            lblUsuario.Location = new Point(361, 93);
             lblUsuario.Name = "lblUsuario";
             lblUsuario.Size = new Size(55, 20);
             lblUsuario.TabIndex = 3;
@@ -125,7 +130,7 @@ namespace FmrVentass.Forms
             // cmbUsuario
             // 
             cmbUsuario.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbUsuario.Location = new Point(400, 57);
+            cmbUsuario.Location = new Point(435, 90);
             cmbUsuario.Name = "cmbUsuario";
             cmbUsuario.Size = new Size(180, 28);
             cmbUsuario.TabIndex = 4;
@@ -133,7 +138,7 @@ namespace FmrVentass.Forms
             // lblTipoVenta
             // 
             lblTipoVenta.AutoSize = true;
-            lblTipoVenta.Location = new Point(20, 100);
+            lblTipoVenta.Location = new Point(653, 93);
             lblTipoVenta.Name = "lblTipoVenta";
             lblTipoVenta.Size = new Size(103, 20);
             lblTipoVenta.TabIndex = 5;
@@ -143,7 +148,7 @@ namespace FmrVentass.Forms
             // 
             cmbTipoVenta.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbTipoVenta.Items.AddRange(new object[] { "Contado", "Credito" });
-            cmbTipoVenta.Location = new Point(139, 97);
+            cmbTipoVenta.Location = new Point(771, 90);
             cmbTipoVenta.Name = "cmbTipoVenta";
             cmbTipoVenta.Size = new Size(150, 28);
             cmbTipoVenta.TabIndex = 6;
@@ -151,7 +156,7 @@ namespace FmrVentass.Forms
             // lblFecha
             // 
             lblFecha.AutoSize = true;
-            lblFecha.Location = new Point(330, 100);
+            lblFecha.Location = new Point(365, 141);
             lblFecha.Name = "lblFecha";
             lblFecha.Size = new Size(50, 20);
             lblFecha.TabIndex = 7;
@@ -160,7 +165,7 @@ namespace FmrVentass.Forms
             // lblFechaValor
             // 
             lblFechaValor.AutoSize = true;
-            lblFechaValor.Location = new Point(400, 100);
+            lblFechaValor.Location = new Point(435, 141);
             lblFechaValor.Name = "lblFechaValor";
             lblFechaValor.Size = new Size(124, 20);
             lblFechaValor.TabIndex = 8;
@@ -169,7 +174,7 @@ namespace FmrVentass.Forms
             // lblProducto
             // 
             lblProducto.AutoSize = true;
-            lblProducto.Location = new Point(20, 150);
+            lblProducto.Location = new Point(20, 141);
             lblProducto.Name = "lblProducto";
             lblProducto.Size = new Size(72, 20);
             lblProducto.TabIndex = 9;
@@ -178,15 +183,15 @@ namespace FmrVentass.Forms
             // cmbProducto
             // 
             cmbProducto.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbProducto.Location = new Point(110, 147);
+            cmbProducto.Location = new Point(110, 138);
             cmbProducto.Name = "cmbProducto";
-            cmbProducto.Size = new Size(260, 28);
+            cmbProducto.Size = new Size(223, 28);
             cmbProducto.TabIndex = 10;
             // 
             // lblCantidad
             // 
             lblCantidad.AutoSize = true;
-            lblCantidad.Location = new Point(390, 150);
+            lblCantidad.Location = new Point(684, 141);
             lblCantidad.Name = "lblCantidad";
             lblCantidad.Size = new Size(72, 20);
             lblCantidad.TabIndex = 11;
@@ -194,7 +199,7 @@ namespace FmrVentass.Forms
             // 
             // numCantidad
             // 
-            numCantidad.Location = new Point(471, 147);
+            numCantidad.Location = new Point(771, 139);
             numCantidad.Maximum = new decimal(new int[] { 1000, 0, 0, 0 });
             numCantidad.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             numCantidad.Name = "numCantidad";
@@ -204,7 +209,7 @@ namespace FmrVentass.Forms
             // 
             // btAgregarLinea
             // 
-            btAgregarLinea.Location = new Point(560, 146);
+            btAgregarLinea.Location = new Point(933, 137);
             btAgregarLinea.Name = "btAgregarLinea";
             btAgregarLinea.Size = new Size(120, 29);
             btAgregarLinea.TabIndex = 13;
@@ -222,7 +227,7 @@ namespace FmrVentass.Forms
             dgvDetalle.ReadOnly = true;
             dgvDetalle.RowHeadersWidth = 51;
             dgvDetalle.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvDetalle.Size = new Size(660, 150);
+            dgvDetalle.Size = new Size(1033, 150);
             dgvDetalle.TabIndex = 14;
             // 
             // lblTotalTexto
@@ -247,7 +252,7 @@ namespace FmrVentass.Forms
             // 
             // btGuardarVenta
             // 
-            btGuardarVenta.Location = new Point(20, 390);
+            btGuardarVenta.Location = new Point(20, 412);
             btGuardarVenta.Name = "btGuardarVenta";
             btGuardarVenta.Size = new Size(140, 32);
             btGuardarVenta.TabIndex = 17;
@@ -256,7 +261,7 @@ namespace FmrVentass.Forms
             // 
             // btNuevaVenta
             // 
-            btNuevaVenta.Location = new Point(170, 390);
+            btNuevaVenta.Location = new Point(166, 412);
             btNuevaVenta.Name = "btNuevaVenta";
             btNuevaVenta.Size = new Size(140, 32);
             btNuevaVenta.TabIndex = 18;
@@ -268,19 +273,27 @@ namespace FmrVentass.Forms
             dgvVentas.AllowUserToAddRows = false;
             dgvVentas.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvVentas.ColumnHeadersHeight = 34;
-            dgvVentas.Location = new Point(20, 440);
+            dgvVentas.Location = new Point(20, 467);
             dgvVentas.MultiSelect = false;
             dgvVentas.Name = "dgvVentas";
             dgvVentas.ReadOnly = true;
             dgvVentas.RowHeadersWidth = 51;
             dgvVentas.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvVentas.Size = new Size(660, 160);
+            dgvVentas.Size = new Size(1033, 160);
             dgvVentas.TabIndex = 19;
+            // 
+            // pnlVentas
+            // 
+            pnlVentas.BackColor = Color.FromArgb(50, 10, 80);
+            pnlVentas.Controls.Add(lblTitulo);
+            pnlVentas.Location = new Point(1, 0);
+            pnlVentas.Name = "pnlVentas";
+            pnlVentas.Size = new Size(1082, 73);
+            pnlVentas.TabIndex = 20;
             // 
             // FmrVentas
             // 
-            ClientSize = new Size(700, 620);
-            Controls.Add(lblTitulo);
+            ClientSize = new Size(1082, 653);
             Controls.Add(lblCliente);
             Controls.Add(cmbCliente);
             Controls.Add(lblUsuario);
@@ -300,6 +313,7 @@ namespace FmrVentass.Forms
             Controls.Add(btGuardarVenta);
             Controls.Add(btNuevaVenta);
             Controls.Add(dgvVentas);
+            Controls.Add(pnlVentas);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FmrVentas";
             Text = "Gestion de ventas";
@@ -307,6 +321,8 @@ namespace FmrVentass.Forms
             ((ISupportInitialize)numCantidad).EndInit();
             ((ISupportInitialize)dgvDetalle).EndInit();
             ((ISupportInitialize)dgvVentas).EndInit();
+            pnlVentas.ResumeLayout(false);
+            pnlVentas.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -327,16 +343,44 @@ namespace FmrVentass.Forms
             cmbCliente.DataSource = clientes;
             cmbCliente.DisplayMember = "Nombre";
             cmbCliente.ValueMember = "IdCliente";
+            cmbCliente.DropDownStyle = ComboBoxStyle.DropDown;
+            cmbCliente.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            cmbCliente.AutoCompleteSource = AutoCompleteSource.ListItems;
+            cmbCliente.SelectedIndex = -1;
 
             var usuarios = _service.ObtenerUsuarios();
             cmbUsuario.DataSource = usuarios;
             cmbUsuario.DisplayMember = "Nombre";
             cmbUsuario.ValueMember = "IdUsuario";
+            
+            if (Sesion.UsuarioActual != null)
+            {
+                cmbUsuario.SelectedValue = Sesion.UsuarioActual.IdUsuario;
+                cmbUsuario.Enabled = false;
+            }
 
             var productos = _service.ObtenerProductosActivos();
             cmbProducto.DataSource = productos;
             cmbProducto.DisplayMember = "Nombre";
             cmbProducto.ValueMember = "IdProducto";
+        }
+        private void DgvVentas_CellFormatting(object? sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.RowIndex < 0) return;
+            if (dgvVentas.Rows[e.RowIndex].DataBoundItem is not Venta venta) return;
+
+            string columna = dgvVentas.Columns[e.ColumnIndex].Name;
+
+            if (columna == "Cliente")
+            {
+                e.Value = venta.Cliente?.Nombre ?? string.Empty;
+                e.FormattingApplied = true;
+            }
+            else if (columna == "Usuario")
+            {
+                e.Value = venta.Usuario?.Nombre ?? string.Empty;
+                e.FormattingApplied = true;
+            }
         }
 
         private void CargarVentas()
@@ -404,23 +448,7 @@ namespace FmrVentass.Forms
             }
         }
 
-        private void DgvVentas_CellFormatting(object? sender, DataGridViewCellFormattingEventArgs e)
-        {
-            if (dgvVentas.Rows[e.RowIndex].DataBoundItem is not Venta venta)
-                return;
-
-            string nombreColumna = dgvVentas.Columns[e.ColumnIndex].Name;
-            if (nombreColumna == "colClienteVenta")
-            {
-                e.Value = venta.Cliente?.Nombre ?? string.Empty;
-                e.FormattingApplied = true;
-            }
-            else if (nombreColumna == "colUsuarioVenta")
-            {
-                e.Value = venta.Usuario?.Nombre ?? string.Empty;
-                e.FormattingApplied = true;
-            }
-        }
+        
 
         private void ActualizarTotal()
         {
