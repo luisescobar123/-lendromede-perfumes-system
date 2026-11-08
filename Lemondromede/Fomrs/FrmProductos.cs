@@ -16,7 +16,7 @@ namespace Lemondromede.Fomrs
 {
     public partial class FrmProductos : Form
     {
-        public FrmProductos()git config user.name "luisescobar123"
+        public FrmProductos()
         {
             InitializeComponent();
 
