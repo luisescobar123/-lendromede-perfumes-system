@@ -16,7 +16,7 @@ namespace Lemondromede.Fomrs
 {
     public partial class FrmProductos : Form
     {
-        public FrmProductos()
+        public FrmProductos()git config user.name "luisescobar123"
         {
             InitializeComponent();
 
@@ -62,6 +62,8 @@ namespace Lemondromede.Fomrs
                         .ToList();
 
                     dataGridViewProductos.DataSource = productos;
+                    if (dataGridViewProductos.Columns.Contains(nameof(Producto.IdProducto)))
+                        dataGridViewProductos.Columns[nameof(Producto.IdProducto)].Visible = false;
                 }
             }
             catch (Exception ex)

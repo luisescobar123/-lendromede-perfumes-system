@@ -44,6 +44,7 @@ namespace FmrVentass.Forms
         public FmrVentas()
         {
             InitializeComponent();
+            StartPosition = FormStartPosition.CenterScreen;
             Font = new Font("Segoe UI", 9f);
             Text = "Gestion de ventas";
 
@@ -317,6 +318,7 @@ namespace FmrVentass.Forms
             CargarCombos();
             CargarVentas();
             dgvDetalle.DataSource = _lineasVenta;
+            OcultarColumnasIdentificador(dgvDetalle);
         }
 
         private void CargarCombos()
@@ -342,6 +344,15 @@ namespace FmrVentass.Forms
             var ventas = _service.ObtenerVentas();
             dgvVentas.DataSource = null;
             dgvVentas.DataSource = ventas;
+            OcultarColumnasIdentificador(dgvVentas);
+        }
+
+        private static void OcultarColumnasIdentificador(DataGridView grilla)
+        {
+            foreach (DataGridViewColumn columna in grilla.Columns)
+            {
+                columna.Visible = !columna.DataPropertyName.StartsWith("Id", StringComparison.OrdinalIgnoreCase);
+            }
         }
 
         private void btAgregarLinea_Click(object? sender, EventArgs e)

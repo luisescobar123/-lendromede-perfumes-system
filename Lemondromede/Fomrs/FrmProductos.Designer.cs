@@ -99,6 +99,7 @@
             label3.Size = new Size(88, 20);
             label3.TabIndex = 1;
             label3.Text = "ID Producto";
+            label3.Visible = false;
             label3.Click += label3_Click;
             // 
             // textProducto
@@ -109,6 +110,7 @@
             textProducto.ReadOnly = true;
             textProducto.Size = new Size(121, 27);
             textProducto.TabIndex = 2;
+            textProducto.Visible = false;
             // 
             // label4
             // 
@@ -332,6 +334,7 @@
             Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(2);
             Name = "FrmProductos";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Productos";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();

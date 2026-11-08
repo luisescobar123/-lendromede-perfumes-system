@@ -27,7 +27,6 @@ namespace Lemondromede.Fomrs
 
             // ----- MAESTRO -----
             ConfigurarGrilla(dgvVentas);
-            AgregarColumna(dgvVentas, "IdVenta", "N°");
             AgregarColumna(dgvVentas, "Fecha", "Fecha", "dd/MM/yyyy HH:mm");
             AgregarColumna(dgvVentas, "Cliente", "Cliente");
             AgregarColumna(dgvVentas, "Cajero", "Cajero");
@@ -93,7 +92,7 @@ namespace Lemondromede.Fomrs
             var lineas = _service.ObtenerDetalleDeVenta(venta.IdVenta);
             dgvDetalle.DataSource = lineas;
 
-            lblDetalle.Text = $"Detalle de la venta N° {venta.IdVenta} - {venta.Cliente}";
+            lblDetalle.Text = $"Detalle de la venta - {venta.Cliente}";
             lblTotal.Text = "Total: " + lineas.Sum(l => l.Subtotal).ToString("C2");
         }
 

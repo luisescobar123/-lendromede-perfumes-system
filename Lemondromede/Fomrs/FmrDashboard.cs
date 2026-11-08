@@ -459,8 +459,8 @@ namespace Lemondromede.Fomrs
 
         private void buttonProductos_Click(object sender, EventArgs e)
         {
-            FrmProductos formulario = new FrmProductos();
-            formulario.Show();
+            using var formulario = new FrmProductos();
+            formulario.ShowDialog(this);
         }
 
         private void toolStripStatusLabel1_Click(object sender, EventArgs e)

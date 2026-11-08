@@ -1,5 +1,6 @@
 using Login.Forms;
 using Lemondromede.Fomrs;
+using Lemondromede.Services;
 using System;
 
 namespace Lemondromede
@@ -14,6 +15,7 @@ namespace Lemondromede
         {
             ApplicationConfiguration.Initialize();
 
+            AuthService.CrearUsuarioInicial();
             
             using (var login = new FrmLogin())
             {

@@ -14,7 +14,7 @@ namespace FmrUsuarioss.Forms
         private readonly TextBox _txtNombre = new();
         private readonly TextBox _txtCorreo = new();
         private readonly TextBox _txtContrasena = new();
-        private readonly TextBox _txtRol = new();
+        private readonly ComboBox _txtRol = new();
         private readonly TextBox _txtBusqueda = new();
         private readonly CheckBox _chkEstado = new();
         private readonly DataGridView _dgvUsuarios = new();
@@ -77,12 +77,14 @@ namespace FmrUsuarioss.Forms
             panel.RowStyles.Add(new RowStyle(SizeType.Absolute, 58));
 
             _txtId.ReadOnly = true;
+            _txtId.Visible = false;
             _txtContrasena.UseSystemPasswordChar = true;
             _chkEstado.Text = "Usuario activo";
             _chkEstado.Checked = true;
-            _txtRol.Text = "Vendedor";
+            _txtRol.DropDownStyle = ComboBoxStyle.DropDownList;
+            _txtRol.Items.AddRange(new object[] { "Vendedor", "Administrador" });
+            _txtRol.SelectedItem = "Vendedor";
 
-            AgregarCampo(panel, "ID:", _txtId, 0, 0);
             AgregarCampo(panel, "Nombre:", _txtNombre, 1, 0);
             AgregarCampo(panel, "Correo:", _txtCorreo, 0, 1);
             AgregarCampo(panel, "Contrasena:", _txtContrasena, 1, 1);
@@ -132,13 +134,6 @@ namespace FmrUsuarioss.Forms
             _dgvUsuarios.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             _dgvUsuarios.MultiSelect = false;
             _dgvUsuarios.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            _dgvUsuarios.Columns.Add(new DataGridViewTextBoxColumn
-            {
-                Name = "IdUsuario",
-                HeaderText = "ID",
-                DataPropertyName = nameof(Usuario.IdUsuario),
-                FillWeight = 40,
-            });
             _dgvUsuarios.Columns.Add(new DataGridViewTextBoxColumn
             {
                 Name = "Nombre",
@@ -223,7 +218,9 @@ namespace FmrUsuarioss.Forms
             _txtNombre.Text = usuario.Nombre;
             _txtCorreo.Text = usuario.Correo;
             _txtContrasena.Clear();
-            _txtRol.Text = usuario.Rol;
+            _txtRol.SelectedItem = usuario.Rol.Equals("ADMIN", StringComparison.OrdinalIgnoreCase)
+                ? "Administrador"
+                : usuario.Rol;
             _chkEstado.Checked = usuario.Estado;
         }
 
@@ -336,7 +333,7 @@ namespace FmrUsuarioss.Forms
         {
             if (string.IsNullOrWhiteSpace(_txtNombre.Text) ||
                 string.IsNullOrWhiteSpace(_txtCorreo.Text) ||
-                string.IsNullOrWhiteSpace(_txtRol.Text))
+                _txtRol.SelectedItem is null)
             {
                 MessageBox.Show("Complete el nombre, correo y rol.", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
@@ -357,7 +354,7 @@ namespace FmrUsuarioss.Forms
             if (_txtNombre.Text.Trim().Length > 100 ||
                 _txtCorreo.Text.Trim().Length > 100 ||
                 _txtContrasena.Text.Length > 50 ||
-                _txtRol.Text.Trim().Length > 50)
+                (_txtRol.SelectedItem is string rolSeleccionado && rolSeleccionado.Length > 50))
             {
                 MessageBox.Show("Revise la longitud de los campos. El nombre y correo admiten 100 caracteres; el rol y la contrasena, 50.", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
@@ -375,7 +372,7 @@ namespace FmrUsuarioss.Forms
                 Contrasena = string.IsNullOrWhiteSpace(_txtContrasena.Text)
     ? ""
     : AuthService.HashContrasena(_txtContrasena.Text),
-                Rol = _txtRol.Text.Trim(),
+                Rol = _txtRol.SelectedItem?.ToString() ?? "",
                 Estado = _chkEstado.Checked,
             };
         }
@@ -386,7 +383,7 @@ namespace FmrUsuarioss.Forms
             _txtNombre.Clear();
             _txtCorreo.Clear();
             _txtContrasena.Clear();
-            _txtRol.Text = "Vendedor";
+            _txtRol.SelectedItem = "Vendedor";
             _chkEstado.Checked = true;
             _dgvUsuarios.ClearSelection();
             _txtNombre.Focus();

@@ -8,6 +8,24 @@ namespace Lemondromede.Services
 {
     public class AuthService
     {
+        public static void CrearUsuarioInicial()
+        {
+            const string correo = "usuario@lendromede.com";
+
+            using var ctx = new LendromedeContext();
+            if (ctx.Usuarios.Any(u => u.Correo == correo))
+                return;
+
+            ctx.Usuarios.Add(new Usuario
+            {
+                Nombre = "Usuario principal",
+                Correo = correo,
+                Contrasena = HashContrasena("Usuario123!"),
+                Rol = "Administrador",
+                Estado = true
+            });
+            ctx.SaveChanges();
+        }
         
         public Usuario? Autenticar(string correo, string contrasena)
         {

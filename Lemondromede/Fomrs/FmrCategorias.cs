@@ -25,6 +25,7 @@ namespace FmrCategoriass.Forms
         public FmrCategorias()
         {
             InitializeComponent();
+            StartPosition = FormStartPosition.CenterScreen;
             // Mantener apariencia simple como en el diseñador
             Font = new Font("Segoe UI", 9f);
             Text = "Gestion de categorias";
@@ -81,6 +82,8 @@ namespace FmrCategoriass.Forms
             txtId.Location = new Point(116, 85);
             txtId.Name = "txtId";
             txtId.ReadOnly = true;
+            lblId.Visible = false;
+            txtId.Visible = false;
             txtId.Size = new Size(125, 27);
             txtId.TabIndex = 2;
             txtId.TextChanged += txtId_TextChanged;
@@ -243,6 +246,8 @@ namespace FmrCategoriass.Forms
             var list = _service.ObtenerCategorias();
             dgvCategorias.DataSource = null;
             dgvCategorias.DataSource = list;
+            if (dgvCategorias.Columns.Contains(nameof(Categoria.IdCategoria)))
+                dgvCategorias.Columns[nameof(Categoria.IdCategoria)].Visible = false;
             // ocultar navegación a productos para mantener vista clara
             if (dgvCategorias.Columns.Contains("Productos"))
                 dgvCategorias.Columns["Productos"].Visible = false;
@@ -318,6 +323,8 @@ namespace FmrCategoriass.Forms
             var filtrados = todos.FindAll(c => c.NombreCategoria.Contains(texto, StringComparison.OrdinalIgnoreCase));
             dgvCategorias.DataSource = null;
             dgvCategorias.DataSource = filtrados;
+            if (dgvCategorias.Columns.Contains(nameof(Categoria.IdCategoria)))
+                dgvCategorias.Columns[nameof(Categoria.IdCategoria)].Visible = false;
             if (dgvCategorias.Columns.Contains("Productos"))
                 dgvCategorias.Columns["Productos"].Visible = false;
         }
