@@ -30,6 +30,9 @@ namespace Login.Forms
 
             btIngresar.Click += btIngresar_Click;
             chkMostrar.CheckedChanged += chkMostrar_CheckedChanged;
+
+            pctLogin.Image = Image.FromFile(Path.Combine(Application.StartupPath, "Resources", "login.png"));
+            pctLogin.SizeMode = PictureBoxSizeMode.Zoom;
         }
 
         private void InitializeComponent()
@@ -122,19 +125,10 @@ namespace Login.Forms
             // 
             // pctLogin
             // 
-            string rutaImagenLogin = Path.Combine(
-                AppContext.BaseDirectory,
-                "Resources",
-                "login.png");
-            if (File.Exists(rutaImagenLogin))
-            {
-                pctLogin.Image = Image.FromFile(rutaImagenLogin);
-                pctLogin.SizeMode = PictureBoxSizeMode.Zoom;
-            }
-            pctLogin.Location = new Point(135, 55);
+            pctLogin.Location = new Point(122, 55);
             pctLogin.Name = "pctLogin";
-            pctLogin.Size = new Size(65, 62);
-            pctLogin.TabIndex = 8;
+            pctLogin.Size = new Size(100, 50);
+            pctLogin.TabIndex = 0;
             pctLogin.TabStop = false;
             // 
             // FrmLogin
@@ -158,7 +152,7 @@ namespace Login.Forms
             MinimizeBox = false;
             Name = "FrmLogin";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Lemondromede - Login";
+            Text = "Lendromede - Login";
             ((System.ComponentModel.ISupportInitialize)pctLogin).EndInit();
             ResumeLayout(false);
             PerformLayout();

@@ -14,20 +14,37 @@ namespace Lemondromede
         
         
         [STAThread]
-        static void Main(string[] args)
+        static void Main()
         {
+
             ApplicationConfiguration.Initialize();
             QuestPDF.Settings.License = LicenseType.Community;
 
-            AuthService.CrearUsuarioInicial();
+            
+                ApplicationConfiguration.Initialize();
 
-            using (var login = new FrmLogin())
+
+                AuthService.CrearUsuarioInicial();
+
+            while (true)
             {
-                if (login.ShowDialog() != DialogResult.OK)
-                    return;
+                Sesion.VolverAlLogin = false;
+
+                using (var login = new FrmLogin())
+                {
+                    if (login.ShowDialog() != DialogResult.OK)
+                        break;
+                }
+
+                using (var dashboard = new FmrDashboard())
+                {
+                    Application.Run(dashboard);
+                }
+
+                if (!Sesion.VolverAlLogin)
+                    break;
             }
 
-            Application.Run(new FmrDashboard());   
 
         }
     }
