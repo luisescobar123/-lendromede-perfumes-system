@@ -1,19 +1,23 @@
 using Login.Forms;
 using Lemondromede.Fomrs;
 using Lemondromede.Services;
+
 using System;
 
 namespace Lemondromede
 {
+    using QuestPDF.Infrastructure;
+
     internal static class Program
     {
-        /// <summary>
-        ///  The main entry point for the application.
-        /// </summary>
+       
+        
+        
         [STAThread]
         static void Main(string[] args)
         {
             ApplicationConfiguration.Initialize();
+            QuestPDF.Settings.License = LicenseType.Community;
 
             AuthService.CrearUsuarioInicial();
 

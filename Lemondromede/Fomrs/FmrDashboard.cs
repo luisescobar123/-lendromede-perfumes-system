@@ -12,7 +12,7 @@ namespace Lemondromede.Fomrs
 {
     public partial class FmrDashboard : Form
     {
-        
+
         private readonly System.Windows.Forms.Timer _reloj = new();
 
         public FmrDashboard()
@@ -24,7 +24,7 @@ namespace Lemondromede.Fomrs
             ? "Bienvenido a Lendromede"
             : $"Bienvenido, {primerNombre}";
 
-           
+
 
             StartPosition = FormStartPosition.CenterScreen;
             WindowState = FormWindowState.Normal;
@@ -80,6 +80,7 @@ namespace Lemondromede.Fomrs
             pictureBox2 = new PictureBox();
             pictureBox1 = new PictureBox();
             lblBienvenida = new Label();
+            btnReportes = new Button();
             pnlMenu.SuspendLayout();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picLogo).BeginInit();
@@ -97,6 +98,7 @@ namespace Lemondromede.Fomrs
             // pnlMenu
             // 
             pnlMenu.BackColor = Color.FromArgb(50, 10, 80);
+            pnlMenu.Controls.Add(btnReportes);
             pnlMenu.Controls.Add(btnCategorias);
             pnlMenu.Controls.Add(btnClientes);
             pnlMenu.Controls.Add(lblMenu);
@@ -107,9 +109,8 @@ namespace Lemondromede.Fomrs
             pnlMenu.Controls.Add(panel3);
             pnlMenu.Dock = DockStyle.Left;
             pnlMenu.Location = new Point(0, 0);
-            pnlMenu.Margin = new Padding(4);
             pnlMenu.Name = "pnlMenu";
-            pnlMenu.Size = new Size(375, 816);
+            pnlMenu.Size = new Size(300, 653);
             pnlMenu.TabIndex = 5;
             // 
             // btnCategorias
@@ -120,10 +121,9 @@ namespace Lemondromede.Fomrs
             btnCategorias.FlatStyle = FlatStyle.Flat;
             btnCategorias.Font = new Font("Segoe UI", 10F);
             btnCategorias.ForeColor = Color.White;
-            btnCategorias.Location = new Point(25, 330);
-            btnCategorias.Margin = new Padding(4);
+            btnCategorias.Location = new Point(20, 264);
             btnCategorias.Name = "btnCategorias";
-            btnCategorias.Size = new Size(325, 56);
+            btnCategorias.Size = new Size(260, 45);
             btnCategorias.TabIndex = 1;
             btnCategorias.Text = "Categorias";
             btnCategorias.UseVisualStyleBackColor = false;
@@ -137,10 +137,9 @@ namespace Lemondromede.Fomrs
             btnClientes.FlatStyle = FlatStyle.Flat;
             btnClientes.Font = new Font("Segoe UI", 10F);
             btnClientes.ForeColor = Color.White;
-            btnClientes.Location = new Point(25, 462);
-            btnClientes.Margin = new Padding(4);
+            btnClientes.Location = new Point(20, 370);
             btnClientes.Name = "btnClientes";
-            btnClientes.Size = new Size(325, 56);
+            btnClientes.Size = new Size(260, 45);
             btnClientes.TabIndex = 7;
             btnClientes.Text = "Clientes";
             btnClientes.UseVisualStyleBackColor = false;
@@ -153,10 +152,9 @@ namespace Lemondromede.Fomrs
             lblMenu.FlatStyle = FlatStyle.Flat;
             lblMenu.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblMenu.ForeColor = SystemColors.ButtonFace;
-            lblMenu.Location = new Point(25, 229);
-            lblMenu.Margin = new Padding(4, 0, 4, 0);
+            lblMenu.Location = new Point(20, 183);
             lblMenu.Name = "lblMenu";
-            lblMenu.Size = new Size(325, 75);
+            lblMenu.Size = new Size(260, 60);
             lblMenu.TabIndex = 0;
             lblMenu.Text = "Menu";
             lblMenu.TextAlign = ContentAlignment.MiddleCenter;
@@ -169,10 +167,9 @@ namespace Lemondromede.Fomrs
             buttonProductos.FlatStyle = FlatStyle.Flat;
             buttonProductos.Font = new Font("Segoe UI", 10F);
             buttonProductos.ForeColor = Color.White;
-            buttonProductos.Location = new Point(25, 399);
-            buttonProductos.Margin = new Padding(4);
+            buttonProductos.Location = new Point(20, 319);
             buttonProductos.Name = "buttonProductos";
-            buttonProductos.Size = new Size(325, 56);
+            buttonProductos.Size = new Size(260, 45);
             buttonProductos.TabIndex = 4;
             buttonProductos.Text = "Productos";
             buttonProductos.UseVisualStyleBackColor = false;
@@ -186,10 +183,9 @@ namespace Lemondromede.Fomrs
             btnVentas.FlatStyle = FlatStyle.Flat;
             btnVentas.Font = new Font("Segoe UI", 10F);
             btnVentas.ForeColor = Color.White;
-            btnVentas.Location = new Point(25, 526);
-            btnVentas.Margin = new Padding(4);
+            btnVentas.Location = new Point(20, 421);
             btnVentas.Name = "btnVentas";
-            btnVentas.Size = new Size(325, 56);
+            btnVentas.Size = new Size(260, 45);
             btnVentas.TabIndex = 3;
             btnVentas.Text = "Ventas";
             btnVentas.UseVisualStyleBackColor = false;
@@ -203,10 +199,9 @@ namespace Lemondromede.Fomrs
             btnUsuarios.FlatStyle = FlatStyle.Flat;
             btnUsuarios.Font = new Font("Segoe UI", 10F);
             btnUsuarios.ForeColor = Color.White;
-            btnUsuarios.Location = new Point(25, 654);
-            btnUsuarios.Margin = new Padding(4);
+            btnUsuarios.Location = new Point(20, 523);
             btnUsuarios.Name = "btnUsuarios";
-            btnUsuarios.Size = new Size(325, 56);
+            btnUsuarios.Size = new Size(260, 45);
             btnUsuarios.TabIndex = 2;
             btnUsuarios.Text = "Usuarios";
             btnUsuarios.UseVisualStyleBackColor = false;
@@ -220,10 +215,9 @@ namespace Lemondromede.Fomrs
             btnVentasDetalle.FlatStyle = FlatStyle.Flat;
             btnVentasDetalle.Font = new Font("Segoe UI", 10F);
             btnVentasDetalle.ForeColor = Color.White;
-            btnVentasDetalle.Location = new Point(25, 590);
-            btnVentasDetalle.Margin = new Padding(4);
+            btnVentasDetalle.Location = new Point(20, 472);
             btnVentasDetalle.Name = "btnVentasDetalle";
-            btnVentasDetalle.Size = new Size(325, 56);
+            btnVentasDetalle.Size = new Size(260, 45);
             btnVentasDetalle.TabIndex = 6;
             btnVentasDetalle.Text = "Consulta de ventas";
             btnVentasDetalle.UseVisualStyleBackColor = false;
@@ -233,10 +227,9 @@ namespace Lemondromede.Fomrs
             // 
             panel3.BackColor = Color.White;
             panel3.Controls.Add(picLogo);
-            panel3.Location = new Point(38, 18);
-            panel3.Margin = new Padding(4);
+            panel3.Location = new Point(30, 14);
             panel3.Name = "panel3";
-            panel3.Size = new Size(312, 156);
+            panel3.Size = new Size(250, 125);
             panel3.TabIndex = 4;
             // 
             // picLogo
@@ -244,10 +237,9 @@ namespace Lemondromede.Fomrs
             picLogo.BackColor = Color.Transparent;
             picLogo.Enabled = false;
             picLogo.Image = (Image)resources.GetObject("picLogo.Image");
-            picLogo.Location = new Point(-38, -64);
-            picLogo.Margin = new Padding(4);
+            picLogo.Location = new Point(-30, -51);
             picLogo.Name = "picLogo";
-            picLogo.Size = new Size(375, 271);
+            picLogo.Size = new Size(300, 217);
             picLogo.SizeMode = PictureBoxSizeMode.Zoom;
             picLogo.TabIndex = 5;
             picLogo.TabStop = false;
@@ -260,9 +252,8 @@ namespace Lemondromede.Fomrs
             pnlContenido.Controls.Add(pnlMenu);
             pnlContenido.Dock = DockStyle.Fill;
             pnlContenido.Location = new Point(0, 0);
-            pnlContenido.Margin = new Padding(4);
             pnlContenido.Name = "pnlContenido";
-            pnlContenido.Size = new Size(1352, 816);
+            pnlContenido.Size = new Size(1082, 653);
             pnlContenido.TabIndex = 0;
             // 
             // pnlBanner
@@ -271,10 +262,9 @@ namespace Lemondromede.Fomrs
             pnlBanner.Controls.Add(lblLociones);
             pnlBanner.Controls.Add(pnlDestacados);
             pnlBanner.Controls.Add(lblBienvenida);
-            pnlBanner.Location = new Point(375, 0);
-            pnlBanner.Margin = new Padding(4);
+            pnlBanner.Location = new Point(300, 0);
             pnlBanner.Name = "pnlBanner";
-            pnlBanner.Size = new Size(978, 669);
+            pnlBanner.Size = new Size(782, 535);
             pnlBanner.TabIndex = 6;
             pnlBanner.Paint += pnlBanner_Paint;
             // 
@@ -282,10 +272,9 @@ namespace Lemondromede.Fomrs
             // 
             lblLociones.Font = new Font("Segoe UI", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             lblLociones.ForeColor = Color.White;
-            lblLociones.Location = new Point(332, 66);
-            lblLociones.Margin = new Padding(4, 0, 4, 0);
+            lblLociones.Location = new Point(266, 53);
             lblLociones.Name = "lblLociones";
-            lblLociones.Size = new Size(396, 108);
+            lblLociones.Size = new Size(317, 86);
             lblLociones.TabIndex = 0;
             lblLociones.Text = "Lociones Destacadas";
             lblLociones.Click += lblLociones_Click;
@@ -299,57 +288,62 @@ namespace Lemondromede.Fomrs
             pnlDestacados.Controls.Add(pictureBox3);
             pnlDestacados.Controls.Add(pictureBox2);
             pnlDestacados.Controls.Add(pictureBox1);
-            pnlDestacados.Location = new Point(0, 178);
-            pnlDestacados.Margin = new Padding(4);
+            pnlDestacados.Location = new Point(0, 142);
             pnlDestacados.Name = "pnlDestacados";
-            pnlDestacados.Size = new Size(978, 635);
+            pnlDestacados.Size = new Size(782, 508);
             pnlDestacados.TabIndex = 2;
             // 
             // pictureBox6
             // 
-            pictureBox6.Location = new Point(368, 18);
+            pictureBox6.Location = new Point(294, 14);
+            pictureBox6.Margin = new Padding(2, 2, 2, 2);
             pictureBox6.Name = "pictureBox6";
-            pictureBox6.Size = new Size(250, 174);
+            pictureBox6.Size = new Size(200, 139);
             pictureBox6.TabIndex = 5;
             pictureBox6.TabStop = false;
             // 
             // pictureBox5
             // 
-            pictureBox5.Location = new Point(686, 237);
+            pictureBox5.Location = new Point(549, 190);
+            pictureBox5.Margin = new Padding(2, 2, 2, 2);
             pictureBox5.Name = "pictureBox5";
-            pictureBox5.Size = new Size(252, 200);
+            pictureBox5.Size = new Size(202, 160);
             pictureBox5.TabIndex = 4;
             pictureBox5.TabStop = false;
             // 
             // pictureBox4
             // 
-            pictureBox4.Location = new Point(368, 237);
+            pictureBox4.Location = new Point(294, 190);
+            pictureBox4.Margin = new Padding(2, 2, 2, 2);
             pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(250, 200);
+            pictureBox4.Size = new Size(200, 160);
             pictureBox4.TabIndex = 3;
             pictureBox4.TabStop = false;
             // 
             // pictureBox3
             // 
-            pictureBox3.Location = new Point(705, 3);
+            pictureBox3.Location = new Point(564, 2);
+            pictureBox3.Margin = new Padding(2, 2, 2, 2);
             pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(233, 190);
+            pictureBox3.Size = new Size(186, 152);
             pictureBox3.TabIndex = 2;
             pictureBox3.TabStop = false;
             // 
             // pictureBox2
             // 
-            pictureBox2.Location = new Point(33, 251);
+            pictureBox2.Location = new Point(26, 201);
+            pictureBox2.Margin = new Padding(2, 2, 2, 2);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(227, 176);
+            pictureBox2.Size = new Size(182, 141);
             pictureBox2.TabIndex = 1;
             pictureBox2.TabStop = false;
             // 
             // pictureBox1
             // 
-            pictureBox1.Location = new Point(33, 18);
+            pictureBox1.Location = new Point(26, 14);
+            pictureBox1.Margin = new Padding(2, 2, 2, 2);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(227, 174);
+            pictureBox1.Size = new Size(182, 139);
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
@@ -357,23 +351,37 @@ namespace Lemondromede.Fomrs
             // 
             lblBienvenida.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblBienvenida.ForeColor = Color.White;
-            lblBienvenida.Location = new Point(279, 11);
-            lblBienvenida.Margin = new Padding(4, 0, 4, 0);
+            lblBienvenida.Location = new Point(223, 9);
             lblBienvenida.Name = "lblBienvenida";
-            lblBienvenida.Size = new Size(452, 182);
+            lblBienvenida.Size = new Size(362, 146);
             lblBienvenida.TabIndex = 1;
             lblBienvenida.Text = "Bienvenido a Lendromede";
             // 
+            // btnReportes
+            // 
+            btnReportes.BackColor = Color.FromArgb(55, 15, 75);
+            btnReportes.Cursor = Cursors.Hand;
+            btnReportes.FlatAppearance.BorderColor = Color.FromArgb(90, 35, 120);
+            btnReportes.FlatStyle = FlatStyle.Flat;
+            btnReportes.Font = new Font("Segoe UI", 10F);
+            btnReportes.ForeColor = Color.White;
+            btnReportes.Location = new Point(20, 574);
+            btnReportes.Name = "btnReportes";
+            btnReportes.Size = new Size(260, 45);
+            btnReportes.TabIndex = 8;
+            btnReportes.Text = "Reportes";
+            btnReportes.UseVisualStyleBackColor = false;
+            btnReportes.Click += btnReportes_Click;
+            // 
             // FmrDashboard
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(245, 240, 250);
-            ClientSize = new Size(1352, 816);
+            ClientSize = new Size(1082, 653);
             Controls.Add(pnlContenido);
             Icon = (Icon)resources.GetObject("$this.Icon");
-            Margin = new Padding(4);
-            MinimumSize = new Size(1370, 861);
+            MinimumSize = new Size(1100, 698);
             Name = "FmrDashboard";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Lendromede Menu Principal";
@@ -471,6 +479,13 @@ namespace Lemondromede.Fomrs
         private PictureBox pictureBox3;
         private PictureBox pictureBox2;
         private PictureBox pictureBox1;
+        private Button btnReportes;
         private Panel pnlContenido;
+
+        private void btnReportes_Click(object sender, EventArgs e)
+        {
+            using var formulario = new FmrReporteVentas();
+            formulario.ShowDialog(this);
+        }
     }
 }
