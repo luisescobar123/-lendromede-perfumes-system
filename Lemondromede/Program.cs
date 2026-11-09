@@ -16,11 +16,11 @@ namespace Lemondromede
             ApplicationConfiguration.Initialize();
 
             AuthService.CrearUsuarioInicial();
-            
+
             using (var login = new FrmLogin())
             {
                 if (login.ShowDialog() != DialogResult.OK)
-                    return;  
+                    return;
             }
 
             Application.Run(new FmrDashboard());   
