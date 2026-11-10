@@ -20,7 +20,7 @@ namespace Lemondromede.Data
         public DbSet<Venta> Ventas { get; set; }
         public DbSet<DetalleVenta> Dventas { get; set; }
         public DbSet<Reporte> Reportes { get; set; }
-        public DbSet<Inventario> Inventarios { get; set; }
+     
       
 
         
@@ -75,12 +75,6 @@ namespace Lemondromede.Data
                 .HasOne(dv => dv.Producto)
                 .WithMany()
                 .HasForeignKey(dv => dv.IdProducto)
-                .OnDelete(DeleteBehavior.Restrict);
-
-            modelBuilder.Entity<Inventario>()
-                .HasOne(i => i.Producto)
-                .WithMany()
-                .HasForeignKey(i => i.IdProducto)
                 .OnDelete(DeleteBehavior.Restrict);
 
             modelBuilder.Entity<Producto>().HasData(

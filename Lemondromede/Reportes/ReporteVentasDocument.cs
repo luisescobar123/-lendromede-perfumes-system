@@ -32,7 +32,7 @@ internal class ReporteVentasDocument : IDocument
         {
             page.Size(PageSizes.Letter);
             page.Margin(30);
-            page.DefaultTextStyle(style => style.FontSize(10).FontFamily(Fonts.Calibri));
+            page.DefaultTextStyle(style => style.FontSize(10).FontFamily(Fonts.Lato));
 
             page.Header().Element(ComponerEncabezado);
             page.Content().Element(ComponerContenido);

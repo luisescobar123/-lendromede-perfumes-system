@@ -274,7 +274,7 @@ namespace Lemondromede.Fomrs
             catch (Exception ex)
             {
                 MessageBox.Show(
-                    "No se pudo eliminar el producto. Puede estar relacionado con ventas o inventario.\n\n" + ex.Message,
+                    "No se pudo eliminar el producto. Puede estar relacionado con ventas.\n\n" + ex.Message,
                     "Error",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);

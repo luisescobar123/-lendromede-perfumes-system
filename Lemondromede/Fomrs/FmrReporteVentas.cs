@@ -14,6 +14,7 @@ namespace Lemondromede.Fomrs
         public FmrReporteVentas()
         {
             InitializeComponent();
+            btnExportar.Click += btnExportar_Click;
         }
 
         private void FmrReporteVentas_Load(object sender, EventArgs e)

@@ -63,6 +63,7 @@ namespace Lemondromede.Fomrs
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FmrDashboard));
             pnlMenu = new Panel();
+            btnReportes = new Button();
             btnCerrar = new Button();
             btnCategorias = new Button();
             btnClientes = new Button();
@@ -95,7 +96,6 @@ namespace Lemondromede.Fomrs
             pictureBox2 = new PictureBox();
             pictureBox1 = new PictureBox();
             lblBienvenida = new Label();
-            btnReportes = new Button();
             pnlMenu.SuspendLayout();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picLogo).BeginInit();
@@ -111,9 +111,9 @@ namespace Lemondromede.Fomrs
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
-            //
+            // 
             // pnlMenu
-            //
+            // 
             pnlMenu.BackColor = Color.Indigo;
             pnlMenu.Controls.Add(btnReportes);
             pnlMenu.Controls.Add(btnCerrar);
@@ -130,9 +130,25 @@ namespace Lemondromede.Fomrs
             pnlMenu.Name = "pnlMenu";
             pnlMenu.Size = new Size(300, 653);
             pnlMenu.TabIndex = 5;
-            //
+            // 
+            // btnReportes
+            // 
+            btnReportes.BackColor = Color.FromArgb(55, 15, 75);
+            btnReportes.Cursor = Cursors.Hand;
+            btnReportes.FlatAppearance.BorderColor = Color.FromArgb(90, 35, 120);
+            btnReportes.FlatStyle = FlatStyle.Flat;
+            btnReportes.Font = new Font("Segoe UI", 10F);
+            btnReportes.ForeColor = Color.White;
+            btnReportes.Location = new Point(20, 510);
+            btnReportes.Name = "btnReportes";
+            btnReportes.Size = new Size(260, 45);
+            btnReportes.TabIndex = 8;
+            btnReportes.Text = "Reportes";
+            btnReportes.UseVisualStyleBackColor = false;
+            btnReportes.Click += btnReportes_Click;
+            // 
             // btnCerrar
-            //
+            // 
             btnCerrar.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             btnCerrar.BackColor = Color.FromArgb(64, 0, 64);
             btnCerrar.Cursor = Cursors.Hand;
@@ -147,9 +163,9 @@ namespace Lemondromede.Fomrs
             btnCerrar.Text = "Cerrar Sesion";
             btnCerrar.UseVisualStyleBackColor = false;
             btnCerrar.Click += btnCerrar_Click;
-            //
+            // 
             // btnCategorias
-            //
+            // 
             btnCategorias.BackColor = Color.FromArgb(55, 15, 75);
             btnCategorias.Cursor = Cursors.Hand;
             btnCategorias.FlatAppearance.BorderColor = Color.FromArgb(90, 35, 120);
@@ -163,9 +179,9 @@ namespace Lemondromede.Fomrs
             btnCategorias.Text = "Categorias";
             btnCategorias.UseVisualStyleBackColor = false;
             btnCategorias.Click += btnCategorias_Click;
-            //
+            // 
             // btnClientes
-            //
+            // 
             btnClientes.BackColor = Color.FromArgb(55, 15, 75);
             btnClientes.Cursor = Cursors.Hand;
             btnClientes.FlatAppearance.BorderColor = Color.FromArgb(90, 35, 120);
@@ -179,9 +195,9 @@ namespace Lemondromede.Fomrs
             btnClientes.Text = "Clientes";
             btnClientes.UseVisualStyleBackColor = false;
             btnClientes.Click += btnClientes_Click;
-            //
+            // 
             // lblMenu
-            //
+            // 
             lblMenu.BackColor = Color.FromArgb(55, 15, 75);
             lblMenu.Cursor = Cursors.Hand;
             lblMenu.FlatStyle = FlatStyle.Flat;
@@ -193,9 +209,9 @@ namespace Lemondromede.Fomrs
             lblMenu.TabIndex = 0;
             lblMenu.Text = "Menu";
             lblMenu.TextAlign = ContentAlignment.MiddleCenter;
-            //
+            // 
             // buttonProductos
-            //
+            // 
             buttonProductos.BackColor = Color.FromArgb(55, 15, 75);
             buttonProductos.Cursor = Cursors.Hand;
             buttonProductos.FlatAppearance.BorderColor = Color.FromArgb(90, 35, 120);
@@ -209,9 +225,9 @@ namespace Lemondromede.Fomrs
             buttonProductos.Text = "Productos";
             buttonProductos.UseVisualStyleBackColor = false;
             buttonProductos.Click += buttonProductos_Click;
-            //
+            // 
             // btnVentas
-            //
+            // 
             btnVentas.BackColor = Color.FromArgb(55, 15, 75);
             btnVentas.Cursor = Cursors.Hand;
             btnVentas.FlatAppearance.BorderColor = Color.FromArgb(90, 35, 120);
@@ -225,9 +241,9 @@ namespace Lemondromede.Fomrs
             btnVentas.Text = "Ventas";
             btnVentas.UseVisualStyleBackColor = false;
             btnVentas.Click += btnVentas_Click;
-            //
+            // 
             // btnUsuarios
-            //
+            // 
             btnUsuarios.BackColor = Color.FromArgb(55, 15, 75);
             btnUsuarios.Cursor = Cursors.Hand;
             btnUsuarios.FlatAppearance.BorderColor = Color.FromArgb(90, 35, 120);
@@ -241,9 +257,9 @@ namespace Lemondromede.Fomrs
             btnUsuarios.Text = "Usuarios";
             btnUsuarios.UseVisualStyleBackColor = false;
             btnUsuarios.Click += btnUsuarios_Click;
-            //
+            // 
             // btnVentasDetalle
-            //
+            // 
             btnVentasDetalle.BackColor = Color.FromArgb(55, 15, 75);
             btnVentasDetalle.Cursor = Cursors.Hand;
             btnVentasDetalle.FlatAppearance.BorderColor = Color.FromArgb(90, 35, 120);
@@ -257,34 +273,18 @@ namespace Lemondromede.Fomrs
             btnVentasDetalle.Text = "Consulta de ventas";
             btnVentasDetalle.UseVisualStyleBackColor = false;
             btnVentasDetalle.Click += btnVentasDetalle_Click;
-            //
-            // btnReportes
-            //
-            btnReportes.BackColor = Color.FromArgb(55, 15, 75);
-            btnReportes.Cursor = Cursors.Hand;
-            btnReportes.FlatAppearance.BorderColor = Color.FromArgb(90, 35, 120);
-            btnReportes.FlatStyle = FlatStyle.Flat;
-            btnReportes.Font = new Font("Segoe UI", 10F);
-            btnReportes.ForeColor = Color.White;
-            btnReportes.Location = new Point(20, 510);
-            btnReportes.Name = "btnReportes";
-            btnReportes.Size = new Size(260, 45);
-            btnReportes.TabIndex = 8;
-            btnReportes.Text = "Reportes";
-            btnReportes.UseVisualStyleBackColor = false;
-            btnReportes.Click += btnReportes_Click;
-            //
+            // 
             // panel3
-            //
+            // 
             panel3.BackColor = Color.Indigo;
             panel3.Controls.Add(picLogo);
             panel3.Location = new Point(30, 14);
             panel3.Name = "panel3";
             panel3.Size = new Size(250, 125);
             panel3.TabIndex = 4;
-            //
+            // 
             // picLogo
-            //
+            // 
             picLogo.BackColor = Color.Transparent;
             picLogo.Enabled = false;
             picLogo.Image = (Image)resources.GetObject("picLogo.Image");
@@ -294,9 +294,9 @@ namespace Lemondromede.Fomrs
             picLogo.SizeMode = PictureBoxSizeMode.Zoom;
             picLogo.TabIndex = 5;
             picLogo.TabStop = false;
-            //
+            // 
             // pnlContenido
-            //
+            // 
             pnlContenido.BackColor = Color.FromArgb(245, 240, 250);
             pnlContenido.CausesValidation = false;
             pnlContenido.Controls.Add(pnlBanner);
@@ -306,9 +306,9 @@ namespace Lemondromede.Fomrs
             pnlContenido.Name = "pnlContenido";
             pnlContenido.Size = new Size(1323, 653);
             pnlContenido.TabIndex = 0;
-            //
+            // 
             // pnlBanner
-            //
+            // 
             pnlBanner.BackColor = Color.FromArgb(50, 10, 80);
             pnlBanner.Controls.Add(lblLociones);
             pnlBanner.Controls.Add(panel2);
@@ -319,30 +319,30 @@ namespace Lemondromede.Fomrs
             pnlBanner.Size = new Size(1029, 653);
             pnlBanner.TabIndex = 6;
             pnlBanner.Paint += pnlBanner_Paint;
-            //
+            // 
             // lblLociones
-            //
+            // 
             lblLociones.BackColor = Color.Indigo;
             lblLociones.Font = new Font("Segoe UI", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             lblLociones.ForeColor = Color.White;
-            lblLociones.Location = new Point(338, 89);
+            lblLociones.Location = new Point(429, 78);
             lblLociones.Name = "lblLociones";
             lblLociones.Size = new Size(103, 40);
             lblLociones.TabIndex = 0;
             lblLociones.Text = "Catálogo";
             lblLociones.Click += lblLociones_Click;
-            //
+            // 
             // panel2
-            //
+            // 
             panel2.BackColor = Color.Indigo;
-            panel2.Location = new Point(304, 76);
+            panel2.Location = new Point(294, 65);
             panel2.Name = "panel2";
-            panel2.Size = new Size(174, 53);
+            panel2.Size = new Size(368, 53);
             panel2.TabIndex = 4;
             panel2.Paint += panel2_Paint;
-            //
+            // 
             // pnlDestacados
-            //
+            // 
             pnlDestacados.BackColor = Color.White;
             pnlDestacados.Controls.Add(label8);
             pnlDestacados.Controls.Add(label1);
@@ -364,163 +364,163 @@ namespace Lemondromede.Fomrs
             pnlDestacados.Name = "pnlDestacados";
             pnlDestacados.Size = new Size(1029, 508);
             pnlDestacados.TabIndex = 2;
-            //
+            // 
             // label8
-            //
+            // 
             label8.AutoSize = true;
             label8.Location = new Point(841, 355);
             label8.Name = "label8";
             label8.Size = new Size(99, 20);
             label8.TabIndex = 15;
             label8.Text = "Galaxie Royal";
-            //
+            // 
             // label1
-            //
+            // 
             label1.AutoSize = true;
             label1.Location = new Point(852, 166);
             label1.Name = "label1";
             label1.Size = new Size(88, 20);
             label1.TabIndex = 14;
             label1.Text = "Lemon Acid";
-            //
+            // 
             // pictureBox8
-            //
+            // 
             pictureBox8.Location = new Point(801, 190);
             pictureBox8.Margin = new Padding(2);
             pictureBox8.Name = "pictureBox8";
             pictureBox8.Size = new Size(186, 152);
             pictureBox8.TabIndex = 13;
             pictureBox8.TabStop = false;
-            //
+            // 
             // pictureBox7
-            //
-            pictureBox7.Location = new Point(801, 0);
+            // 
+            pictureBox7.Location = new Point(801, 13);
             pictureBox7.Margin = new Padding(2);
             pictureBox7.Name = "pictureBox7";
-            pictureBox7.Size = new Size(186, 152);
+            pictureBox7.Size = new Size(186, 146);
             pictureBox7.TabIndex = 12;
             pictureBox7.TabStop = false;
-            //
+            // 
             // label7
-            //
+            // 
             label7.AutoSize = true;
-            label7.Location = new Point(599, 355);
+            label7.Location = new Point(586, 355);
             label7.Name = "label7";
             label7.Size = new Size(125, 20);
             label7.TabIndex = 11;
             label7.Text = "Une Touche Deau";
-            //
+            // 
             // label6
-            //
+            // 
             label6.AutoSize = true;
-            label6.Location = new Point(359, 355);
+            label6.Location = new Point(338, 355);
             label6.Name = "label6";
             label6.Size = new Size(82, 20);
             label6.TabIndex = 10;
             label6.Text = "Trotil Doux";
-            //
+            // 
             // label5
-            //
+            // 
             label5.AutoSize = true;
             label5.Location = new Point(69, 355);
             label5.Name = "label5";
             label5.Size = new Size(95, 20);
             label5.TabIndex = 9;
             label5.Text = "Coeur Rouge";
-            //
+            // 
             // label4
-            //
+            // 
             label4.AutoSize = true;
-            label4.Location = new Point(620, 166);
+            label4.Location = new Point(599, 166);
             label4.Name = "label4";
             label4.Size = new Size(86, 20);
             label4.TabIndex = 8;
             label4.Text = "Rockbotton";
-            //
+            // 
             // label3
-            //
+            // 
             label3.AutoSize = true;
-            label3.Location = new Point(338, 166);
+            label3.Location = new Point(326, 166);
             label3.Name = "label3";
             label3.Size = new Size(115, 20);
             label3.TabIndex = 7;
             label3.Text = "Universe Parfum";
-            //
+            // 
             // label2
-            //
+            // 
             label2.AutoSize = true;
             label2.Location = new Point(82, 166);
             label2.Name = "label2";
             label2.Size = new Size(72, 20);
             label2.TabIndex = 6;
             label2.Text = "Mel Deux";
-            //
+            // 
             // pictureBox6
-            //
-            pictureBox6.Location = new Point(294, 14);
+            // 
+            pictureBox6.Location = new Point(276, 13);
             pictureBox6.Margin = new Padding(2);
             pictureBox6.Name = "pictureBox6";
             pictureBox6.Size = new Size(200, 139);
             pictureBox6.TabIndex = 5;
             pictureBox6.TabStop = false;
-            //
+            // 
             // pictureBox5
-            //
+            // 
             pictureBox5.Location = new Point(549, 190);
             pictureBox5.Margin = new Padding(2);
             pictureBox5.Name = "pictureBox5";
-            pictureBox5.Size = new Size(202, 160);
+            pictureBox5.Size = new Size(186, 160);
             pictureBox5.TabIndex = 4;
             pictureBox5.TabStop = false;
-            //
+            // 
             // pictureBox4
-            //
-            pictureBox4.Location = new Point(294, 190);
+            // 
+            pictureBox4.Location = new Point(276, 188);
             pictureBox4.Margin = new Padding(2);
             pictureBox4.Name = "pictureBox4";
             pictureBox4.Size = new Size(200, 160);
             pictureBox4.TabIndex = 3;
             pictureBox4.TabStop = false;
-            //
+            // 
             // pictureBox3
-            //
-            pictureBox3.Location = new Point(564, 2);
+            // 
+            pictureBox3.Location = new Point(549, 13);
             pictureBox3.Margin = new Padding(2);
             pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(186, 152);
+            pictureBox3.Size = new Size(186, 146);
             pictureBox3.TabIndex = 2;
             pictureBox3.TabStop = false;
-            //
+            // 
             // pictureBox2
-            //
+            // 
             pictureBox2.Location = new Point(26, 201);
             pictureBox2.Margin = new Padding(2);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(182, 141);
             pictureBox2.TabIndex = 1;
             pictureBox2.TabStop = false;
-            //
+            // 
             // pictureBox1
-            //
+            // 
             pictureBox1.Location = new Point(26, 14);
             pictureBox1.Margin = new Padding(2);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(182, 139);
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
-            //
+            // 
             // lblBienvenida
-            //
+            // 
             lblBienvenida.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblBienvenida.ForeColor = Color.White;
-            lblBienvenida.Location = new Point(223, 9);
+            lblBienvenida.Location = new Point(294, 9);
             lblBienvenida.Name = "lblBienvenida";
             lblBienvenida.Size = new Size(362, 64);
             lblBienvenida.TabIndex = 1;
             lblBienvenida.Text = "Bienvenido a Lendromede";
-            //
+            // 
             // FmrDashboard
-            //
+            // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(245, 240, 250);

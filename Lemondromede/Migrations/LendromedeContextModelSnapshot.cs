@@ -134,33 +134,6 @@ namespace Lemondromede.Migrations
                     b.ToTable("Dventas");
                 });
 
-            modelBuilder.Entity("Lemondromede.Models.Inventario", b =>
-                {
-                    b.Property<int>("IdInventario")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdInventario"));
-
-                    b.Property<int>("CantidadDisponible")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("FechaActual")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("IdProducto")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Stock")
-                        .HasColumnType("int");
-
-                    b.HasKey("IdInventario");
-
-                    b.HasIndex("IdProducto");
-
-                    b.ToTable("Inventarios");
-                });
-
             modelBuilder.Entity("Lemondromede.Models.Producto", b =>
                 {
                     b.Property<int>("IdProducto")
@@ -372,17 +345,6 @@ namespace Lemondromede.Migrations
                     b.Navigation("Producto");
 
                     b.Navigation("Venta");
-                });
-
-            modelBuilder.Entity("Lemondromede.Models.Inventario", b =>
-                {
-                    b.HasOne("Lemondromede.Models.Producto", "Producto")
-                        .WithMany()
-                        .HasForeignKey("IdProducto")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.Navigation("Producto");
                 });
 
             modelBuilder.Entity("Lemondromede.Models.Producto", b =>
