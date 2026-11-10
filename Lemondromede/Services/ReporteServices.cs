@@ -22,7 +22,7 @@ namespace Lemondromede.Services
                       .OrderBy(v => v.Fecha)
                       .Select(v => new VentaReportesDto
                       {
-                          Id = v.IdCliente,
+                          Id = v.IdVenta,
                           Fecha = v.Fecha,
                           Cliente = v.Cliente.Nombre,          
                           Vendedor = v.Usuario.Nombre,  

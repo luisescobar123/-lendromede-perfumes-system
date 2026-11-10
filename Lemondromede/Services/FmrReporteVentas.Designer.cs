@@ -2,15 +2,8 @@
 {
     partial class FmrReporteVentas
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
+        
         private System.ComponentModel.IContainer components = null;
-
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -22,10 +15,6 @@
 
         #region Windows Form Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
             pnlFiltros = new Panel();
@@ -40,9 +29,7 @@
             pnlFiltros.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvReporte).BeginInit();
             SuspendLayout();
-            // 
-            // pnlFiltros
-            // 
+     
             pnlFiltros.Controls.Add(btnExportar);
             pnlFiltros.Controls.Add(btnBuscar);
             pnlFiltros.Controls.Add(lblHasta);
@@ -54,25 +41,26 @@
             pnlFiltros.Name = "pnlFiltros";
             pnlFiltros.Size = new Size(882, 60);
             pnlFiltros.TabIndex = 0;
-            // 
+            
             // btnExportar
-            // 
+     
             btnExportar.Location = new Point(747, 12);
             btnExportar.Name = "btnExportar";
             btnExportar.Size = new Size(94, 29);
             btnExportar.TabIndex = 6;
             btnExportar.Text = "Exportar";
             btnExportar.UseVisualStyleBackColor = true;
-            // 
+           
             // btnBuscar
-            // 
+            
             btnBuscar.Location = new Point(624, 12);
             btnBuscar.Name = "btnBuscar";
             btnBuscar.Size = new Size(94, 29);
             btnBuscar.TabIndex = 5;
             btnBuscar.Text = "Buscar";
             btnBuscar.UseVisualStyleBackColor = true;
-            // 
+            btnBuscar.Click += btnBuscar_Click;
+            
             // lblHasta
             // 
             lblHasta.AutoSize = true;
@@ -82,25 +70,25 @@
             lblHasta.TabIndex = 4;
             lblHasta.Text = "Hasta";
             lblHasta.Click += lblHasta_Click;
-            // 
+            
             // dtpHasta
-            // 
+            
             dtpHasta.Format = DateTimePickerFormat.Short;
             dtpHasta.Location = new Point(313, 27);
             dtpHasta.Name = "dtpHasta";
             dtpHasta.Size = new Size(250, 27);
             dtpHasta.TabIndex = 3;
-            // 
+            
             // dtpDesde
-            // 
+            
             dtpDesde.Format = DateTimePickerFormat.Short;
             dtpDesde.Location = new Point(21, 27);
             dtpDesde.Name = "dtpDesde";
             dtpDesde.Size = new Size(250, 27);
             dtpDesde.TabIndex = 2;
-            // 
+           
             // lblDesde
-            // 
+            
             lblDesde.AutoSize = true;
             lblDesde.Location = new Point(102, 4);
             lblDesde.Name = "lblDesde";
@@ -108,9 +96,9 @@
             lblDesde.TabIndex = 1;
             lblDesde.Text = "Desde";
             lblDesde.Click += lblDesde_Click;
-            // 
+            
             // lblResumen
-            // 
+            
             lblResumen.Dock = DockStyle.Bottom;
             lblResumen.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblResumen.Location = new Point(0, 483);
@@ -118,9 +106,9 @@
             lblResumen.Size = new Size(882, 30);
             lblResumen.TabIndex = 1;
             lblResumen.Text = "Resumen";
-            // 
+             
             // dgvReporte
-            // 
+            
             dgvReporte.AllowUserToAddRows = false;
             dgvReporte.AllowUserToDeleteRows = false;
             dgvReporte.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
@@ -133,9 +121,9 @@
             dgvReporte.RowHeadersWidth = 51;
             dgvReporte.Size = new Size(882, 423);
             dgvReporte.TabIndex = 2;
-            // 
+            
             // FmrReporteVentas
-            // 
+            
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(882, 513);
